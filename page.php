@@ -1,8 +1,4 @@
-<?php
-
-get_header();
-
-?>
+<?php get_header(); ?>
 
 <div class="container">
     <h1>Hello World</h1>

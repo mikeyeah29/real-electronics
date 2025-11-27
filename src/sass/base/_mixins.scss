@@ -1,0 +1,21 @@
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == mobile {
+        @media (max-width: 576px) { @content; }
+    } @else if $breakpoint == tablet {
+        @media (max-width: 768px) { @content; }
+    }
+}
+
+@mixin center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin fluid-size($min-size, $max-size, $min-vw, $max-vw) {
+    $slope: (
+        $max-size - $min-size) / ($max-vw - $min-vw) * 100;
+    $intercept: $min-size - ($slope / 100 * $min-vw
+    );
+    font-size: clamp(#{$min-size}, #{$slope}vw + #{$intercept}px, #{$max-size});
+}

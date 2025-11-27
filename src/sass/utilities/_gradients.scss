@@ -1,0 +1,68 @@
+.aurora {
+    background: linear-gradient(120deg, #0b132b, #1c2541, #3a506b);
+    background-image:
+        repeating-linear-gradient(120deg,
+            rgba(255, 0, 150, 0.2) 0%,
+            rgba(0, 255, 255, 0.15) 10%,
+            rgba(255, 255, 0, 0.1) 20%,
+            transparent 30%),
+        linear-gradient(90deg, #1c2541, #3a506b, #5bc0be);
+    background-blend-mode: screen;
+}
+
+.synthwave {
+    background: linear-gradient(to top, #20002c, #cbb4d4 40%, #fbd3e9 70%, #ff9a9e 100%);
+}
+
+.iridescent {
+    background: linear-gradient(135deg, #fff 0%, #f4eefa 25%, #e0f7ff 50%, #ffeef8 75%, #fff 100%);
+    background-blend-mode: overlay;
+}
+
+.flame {
+    background: linear-gradient(160deg, #ff0000 0%, #ff7a00 30%, #ffd000 60%, #fff0a1 100%);
+}
+
+.rainbow-glass {
+    background: linear-gradient(90deg,
+            #ff0000 0%,
+            #ff7f00 16%,
+            #ffff00 33%,
+            #00ff00 50%,
+            #0000ff 66%,
+            #8b00ff 83%,
+            #ff007f 100%);
+    filter: brightness(1.1) saturate(1.2);
+}
+
+.ocean {
+    background: linear-gradient(to bottom, #00111a 0%, #002b36 40%, #004e64 80%, #0a9396 100%);
+}
+
+.glitch {
+    background:
+        linear-gradient(90deg, #0ff 0%, #00f 100%),
+        linear-gradient(0deg, #f0f 0%, #f00 100%);
+    background-blend-mode: screen;
+    filter: contrast(1.2) brightness(1.1);
+}
+
+.metal {
+    background: repeating-linear-gradient(90deg,
+            #ccc 0%,
+            #eee 4%,
+            #ccc 8%);
+    filter: brightness(0.9);
+}
+
+.pastel-sky {
+    background: linear-gradient(to top right,
+            #ffe5ec 0%,
+            #ffc8dd 25%,
+            #bde0fe 60%,
+            #a2d2ff 100%);
+}
+
+.juicy {
+    background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 33%, #fad0c4 66%, #fbc2eb 100%);
+}

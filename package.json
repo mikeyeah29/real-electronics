@@ -1,0 +1,21 @@
+{
+  "name": "real-electronics",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "wp-scripts build src/index.js src/editor.js",
+    "start": "wp-scripts start src/index.js src/editor.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@wordpress/scripts": "^30.23.0"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "blaze-slider": "^1.9.3"
+  }
+}

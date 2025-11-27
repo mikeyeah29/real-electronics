@@ -24,28 +24,13 @@
                     "name": "White"
                 },
                 {
-                    "slug": "gray-100",
-                    "color": "#f5f5f5",
-                    "name": "Light Gray"
-                },
-                {
-                    "slug": "gray-400",
-                    "color": "#a3a3a3",
-                    "name": "Mid Gray"
-                },
-                {
-                    "slug": "gray-900",
-                    "color": "#1a1a1a",
-                    "name": "Dark Gray"
-                },
-                {
                     "slug": "primary",
-                    "color": "#2563eb",
+                    "color": "#FF7500",
                     "name": "Primary"
                 },
                 {
                     "slug": "secondary",
-                    "color": "#f59e0b",
+                    "color": "#FF5500",
                     "name": "Secondary"
                 }
             ]

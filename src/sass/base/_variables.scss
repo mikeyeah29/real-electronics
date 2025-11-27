@@ -1,0 +1,33 @@
+/* Colours
+============================================*/
+
+
+
+/* Fonts
+============================================*/
+
+// Font Variation Themes
+
+/* Bold & Powerful ( Default ) */
+
+$font-logo: "komu-a", sans-serif;
+$font-brand: "polymath", sans-serif;
+$font-display: "polymath";
+$font-alternate: "polymath";
+
+/* Override for mobile */
+// @media (max-width: 768px) {
+//     :root {
+//         --wp--preset--spacing--40: 0.75rem !important;
+//         --wp--preset--spacing--50: 1rem !important;
+//         --wp--preset--spacing--60: 1.5rem !important;
+//         --wp--preset--spacing--70: 2rem !important;
+//         --wp--preset--spacing--80: 3rem !important;
+//     }
+// }
+
+/* Breakpoints ( based on wp gutenberg breakpoints )
+========================================================*/
+
+$breakpoint-sm: 600px;
+$breakpoint-md: 782px;

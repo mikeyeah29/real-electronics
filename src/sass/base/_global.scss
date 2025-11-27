@@ -1,0 +1,31 @@
+html {
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+// body {
+//     background: #fff;
+//     font-family: $font-display;
+//     overflow-x: hidden;
+// }
+
+img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.img-portrait {
+  aspect-ratio: 3 / 4; /* Optional: Enforce a consistent aspect ratio */
+  object-fit: cover;
+}
+
+.img-landscape {
+  aspect-ratio: 3 / 2; /* Optional: Enforce a consistent aspect ratio */
+  object-fit: cover;
+}
+
+.ul-reset {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
