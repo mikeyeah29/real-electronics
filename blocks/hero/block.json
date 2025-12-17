@@ -1,0 +1,50 @@
+{
+    "apiVersion": 3,
+    "name": "enigma/hero",
+    "title": "Hero",
+    "category": "layout",
+    "icon": "cover-image",
+    "description": "A flexible hero block with background options and inner blocks.",
+    "attributes": {
+        "backgroundImage": {
+            "type": "string"
+        },
+        "overlayGradient": {
+            "type": "string"
+        },
+        "responsiveHeight": {
+            "type": "string",
+            "default": "none"
+        },
+        "paddingTop": {
+            "type": "string",
+            "default": "var(--wp--preset--spacing--40)"
+        },
+        "paddingBottom": {
+            "type": "string",
+            "default": "var(--wp--preset--spacing--40)"
+        },
+        "style": {
+            "type": "object",
+            "default": {
+                "color": {
+                    "background": "var(--wp--preset--color--neutral)"
+                },
+                "align": "full"
+            }
+        }
+    },
+    "supports": {
+        "align": [
+            "full"
+        ],
+        "color": {
+            "background": true
+        },
+        "spacing": {
+            "padding": true
+        }
+    },
+    "editorScript": "enigma-blocks-editor",
+    "render": "file:./render.php"
+}

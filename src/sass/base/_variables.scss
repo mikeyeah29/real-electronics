@@ -10,10 +10,10 @@
 
 /* Bold & Powerful ( Default ) */
 
-$font-logo: "komu-a", sans-serif;
-$font-brand: "polymath", sans-serif;
-$font-display: "polymath";
-$font-alternate: "polymath";
+$font-logo: "Rajdhani", sans-serif;
+$font-brand: "Rajdhani", sans-serif;
+$font-display: "Inter";
+$font-alternate: "Space Grotesk";
 
 /* Override for mobile */
 // @media (max-width: 768px) {
@@ -31,3 +31,9 @@ $font-alternate: "polymath";
 
 $breakpoint-sm: 600px;
 $breakpoint-md: 782px;
+
+/* Spacing
+============================================*/
+
+$body-padding: 2rem;    
+$body-padding-mobile: 1rem;

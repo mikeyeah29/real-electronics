@@ -1,0 +1,15 @@
+{
+    "apiVersion": 3,
+    "name": "enigma/accordion",
+    "title": "Accordion",
+    "category": "design",
+    "icon": "menu",
+    "attributes": {
+        "theme": {
+            "type": "string"
+        }
+    },
+    "description": "Accordion container for collapsible items.",
+    "editorScript": "enigma-blocks-editor",
+    "render": "file:./render.php"
+}

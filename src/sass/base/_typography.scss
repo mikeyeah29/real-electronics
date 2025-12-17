@@ -1,4 +1,12 @@
 body {
     line-height: normal;
+    font-family: $font-display;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-brand;
+}
+
+p, a, span, li, div, input, textarea, select, button {
+    font-family: $font-display;
+}

@@ -1,0 +1,24 @@
+{
+    "apiVersion": 3,
+    "name": "enigma/accordion-item",
+    "title": "Accordion Item",
+    "parent": [
+        "enigma/accordion"
+    ],
+    "category": "design",
+    "icon": "excerpt-view",
+    "description": "Single accordion item.",
+    "attributes": {
+        "heading": {
+            "type": "string"
+        }
+    },
+    "supports": {
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "editorScript": "enigma-blocks-editor",
+    "render": "file:./render.php"
+}

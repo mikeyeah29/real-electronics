@@ -56,4 +56,19 @@
 		</nav>
 
 	</div>
+	<div class="header-border"></div>
+	<div class="site-header__bottom">
+		<ul class="site-header-contact">
+			<li>
+				<a href="#">
+					enquiries@real-electronics.com
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					0114 244 2969
+				</a>
+			</li>
+		</ul>
+	</div>
 </header>

@@ -1,9 +1,5 @@
 <?php get_header(); ?>
 
-<div class="container">
-    <h1>Hello World</h1>
-</div>
+<?php the_content(); ?>
 
-<?php
-
-get_footer();
+<?php get_footer(); ?>

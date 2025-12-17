@@ -32,6 +32,8 @@ class Scripts {
 			return $html;
 		}, 10, 2);
 
+		$this->enqueue_google_fonts();
+
 	}
 
 	/**
@@ -61,7 +63,7 @@ class Scripts {
 	}
 
 	private function enqueue_google_fonts() {
-		$fonts_url = get_theme_mod('google_fonts_url');
+		$fonts_url = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap'; // get_theme_mod('google_fonts_url');
 		if($fonts_url) {
 			// Preconnects
 			wp_resource_hints( 'https://fonts.googleapis.com', 'preconnect' );
