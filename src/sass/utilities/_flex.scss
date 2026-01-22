@@ -5,9 +5,13 @@
 .justify-content-center { justify-content: center; }
 .justify-content-between { justify-content: space-between; }
 .justify-content-end { justify-content: flex-end; }
+.justify-content-start { justify-content: flex-start; }
+.justify-content-around { justify-content: space-around; }
+.justify-content-evenly { justify-content: space-evenly; }
 
 .align-items-center { align-items: center; }
 .align-items-end { align-items: flex-end; }
+.align-items-stretch { align-items: stretch; }
 
 .flex-wrap { flex-wrap: wrap; }
 .flex-col { flex-direction: column; }
@@ -18,5 +22,6 @@
     .justify-content-md-between { justify-content: space-between; }
     .align-items-md-center { align-items: center; }
     .align-items-md-end { align-items: flex-end; }
+    .align-items-md-stretch { align-items: stretch; }
     .flex-wrap-md { flex-wrap: wrap; }
 }

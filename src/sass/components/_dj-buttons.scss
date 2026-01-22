@@ -1,0 +1,36 @@
+.dj-buttons {
+    // position: fixed;
+    // bottom: 0;
+    // right: 0px;
+    // z-index: 1000;
+
+    position: absolute;
+    top: -6px;
+    right: 2rem;
+    span {
+        font-size: 14px;
+        color: var(--wp--preset--color--white);
+        transition: color 0.3s ease;
+    }
+    a {
+        &:hover {
+            text-decoration: none;
+            span {
+                color: var(--wp--preset--color--accent);
+            }
+            .pioneer-button {
+                box-shadow: 0px 0px 0px 4px rgb(145 255 150);
+            }
+        }
+        &.is-cue {
+            &:hover {
+                .pioneer-button {
+                    box-shadow: 0px 0px 0px 4px #ff9d48;
+                }
+                span {
+                    color: var(--wp--preset--color--primary);
+                }
+            }
+        }
+    }
+}

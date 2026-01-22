@@ -1,0 +1,72 @@
+.tabs {
+    border-radius: 2px;
+}
+
+/* Hide radio buttons */
+.tabs input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+/* Tab labels */
+.tabs label {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    margin-right: 0.25rem;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    font-weight: 500;
+    transition: color 0.2s ease, border-color 0.2s ease;
+    font-size: var(--wp--preset--font-size--md);
+    font-family: $font-brand;
+    width: 100%;
+    background: var(--wp--preset--color--black);
+    color: var(--wp--preset--color--white);
+    align-items: center;
+    display: flex;
+    gap: 8px;
+}
+
+.tabs label:hover {
+    color: #ff7500;
+}
+
+.tabs-controls {
+    padding: 0px 1rem;
+}
+
+.tab-control {
+    flex-grow: 1;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* Active tab */
+#tab-amps:checked+label,
+#tab-mixers:checked+label,
+#tab-speakers:checked+label,
+#tab-dj:checked+label,
+#tab-pro:checked+label {
+    // border-bottom-color: #ff7500;
+    color: #ff7500;
+    background: var(--wp--preset--color--white);
+    border-radius: 4px 4px 0 0;
+}
+
+/* Content wrapper */
+.tab-content {
+    padding-top: 2rem;
+    background: white;
+    border-radius: 4px;
+    .panel {
+        padding: var(--wp--preset--spacing--md);
+    }
+}
+
+.repairs-tabs .panel {
+    display: none;
+}
+
+.repairs-tabs .panel.is-active {
+    display: block;
+}

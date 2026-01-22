@@ -2,7 +2,7 @@
 /**
  * The header for our theme
  *
- * @package YourTheme
+ * @package Real Electronics
  */
 ?>
 <!doctype html>
@@ -38,13 +38,21 @@
 		<button class="site-header__toggle"
 			aria-controls="primary-menu"
 			aria-expanded="false"
-			aria-label="<?php esc_attr_e('Toggle navigation', 'yourtheme'); ?>">
+			aria-label="<?php esc_attr_e('Toggle navigation', 'realelectronics'); ?>">
 			<span></span>
 			<span></span>
 			<span></span>
 		</button>
 
-		<nav class="site-header__nav" id="primary-menu" aria-label="<?php esc_attr_e('Primary navigation', 'yourtheme'); ?>">
+		<?php get_template_part('template-parts/header/contact'); ?>
+
+		<?php get_template_part('template-parts/header/social-links'); ?>
+
+	</div>
+	<div class="header-border"></div>
+	<div class="site-header__bottom d-flex align-items-center justify-content-between">
+
+		<nav class="site-header__nav" id="primary-menu" aria-label="<?php esc_attr_e('Primary navigation', 'realelectronics'); ?>">
 			<?php
 				wp_nav_menu([
 					'theme_location' => 'primary',
@@ -55,20 +63,9 @@
 			?>
 		</nav>
 
-	</div>
-	<div class="header-border"></div>
-	<div class="site-header__bottom">
-		<ul class="site-header-contact">
-			<li>
-				<a href="#">
-					enquiries@real-electronics.com
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					0114 244 2969
-				</a>
-			</li>
-		</ul>
+		<?php // get_template_part('template-parts/components/pioneer-btn', null, array('text' => 'REPAIR ENQUIRY', 'link' => '#', 'class' => 'ml-auto mr-xs')); ?>
+		<?php //get_template_part('template-parts/components/pioneer-btn', null, array('text' => 'PARTS', 'link' => '#', 'class' => 'ml-xs', 'style' => 'is-green')); ?>
+
+		<?php get_template_part('template-parts/components/dj-buttons'); ?>
 	</div>
 </header>

@@ -1,7 +1,8 @@
-/* Colours
-============================================*/
-
-
+:root {
+    --container-width: var(--wp--style--global--content-size);
+    --container-gutter: max(0px,
+            calc((100vw - var(--container-width)) / 2));
+}
 
 /* Fonts
 ============================================*/

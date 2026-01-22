@@ -1,0 +1,26 @@
+.site-footer {
+    background: linear-gradient(to right, var(--wp--preset--color--secondary), var(--wp--preset--color--primary));
+    color: var(--wp--preset--color--white);
+    padding: var(--wp--preset--spacing--lg) 0px;
+    .footer-logo {
+        img {
+            width: 280px;
+            height: auto;
+        }
+    }
+}
+
+.site-footer h4::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #ff7500;
+    margin-top: 0.5rem;
+}
+
+.footer-banner {
+    background: var(--wp--preset--color--black);
+    color: var(--wp--preset--color--white);
+    padding: var(--wp--preset--spacing--md) 0px;
+}

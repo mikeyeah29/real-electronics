@@ -3,11 +3,9 @@ html {
     overflow-x: hidden;
 }
 
-// body {
-//     background: #fff;
-//     font-family: $font-display;
-//     overflow-x: hidden;
-// }
+body {
+    background: var(--wp--preset--color--white);
+}
 
 img {
     width: 100%;

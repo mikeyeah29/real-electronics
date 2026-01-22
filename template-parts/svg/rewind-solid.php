@@ -1,0 +1,3 @@
+
+
+<svg fill="currentColor" width="100%" height="100%" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M1064.719 308.99 0 959.644 1064.719 1610.3v-522.363l855.174 521.829V309.524L1064.72 831.246z" fill-rule="evenodd"></path> </g></svg>
