@@ -21,7 +21,7 @@ h2, .hdln-2 {
 
 p {
     font-size: var(--wp--preset--font-size--sm);
-    margin-bottom: 1rem;
+    margin-bottom: var(--wp--preset--spacing--sm);
     &:last-child {
         margin-bottom: 0;
     }

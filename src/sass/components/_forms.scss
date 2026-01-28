@@ -1,0 +1,11 @@
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border: solid 2px var(--wp--preset--color--primary) !important;
+    border-radius: 4px;
+}
+
+input, textarea, select {
+    padding: var(--wp--preset--spacing--xs);
+}

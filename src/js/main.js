@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 =============================================*/
 
 const inner = document.querySelector('.wp-block-cover__image-background');
-const section = document.querySelector('.manufacturers-slider');
+const section = document.querySelector('.page-start-after-hero');
 
 // 🔧 TUNE THESE
 const maxZoom = 0.8; // 0.04 = subtle, 0.08 = strong

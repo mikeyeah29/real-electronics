@@ -1,0 +1,120 @@
+.wpcf7-form-control-wrap {
+    display: block;
+    margin-top: 5px;
+}
+
+.wpcf7-form {
+    label {
+        font-weight: 500;
+        font-size: 14px;
+    }
+}
+
+/* Wrapper label */
+label:has(.wpcf7-file) {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--wp--preset--color--charcoal, #333);
+}
+
+/* Hide the ugly native input */
+.wpcf7-file {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Custom drop zone */
+.wpcf7-form-control-wrap[data-name="attachment"] {
+    display: block;
+    margin-top: 0.5rem;
+    position: relative;
+}
+
+.wpcf7-form-control-wrap[data-name="attachment"]::before {
+    content: "Click to upload file";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    padding: 1.5rem;
+    border: 2px dashed var(--wp--preset--color--neutral, #ccc);
+    border-radius: 12px;
+    background: var(--wp--preset--color--white, #fff);
+    color: #666;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Hover */
+label:hover .wpcf7-form-control-wrap[data-name="attachment"]::before {
+    border-color: var(--wp--preset--color--primary, #000);
+    background: rgba(0, 0, 0, 0.02);
+}
+
+/* Focus (keyboard accessibility) */
+label:focus-within .wpcf7-form-control-wrap[data-name="attachment"]::before {
+    outline: none;
+    border-color: var(--wp--preset--color--primary, #000);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Small helper text look */
+label br {
+    display: none;
+}
+
+label>span:first-child,
+label {
+    line-height: 1.4;
+}
+
+.wpcf7-not-valid-tip {
+    font-size: 14px !important;
+    margin-top: 4px;
+}
+
+.wpcf7-submit {
+    background-color: var(--wp--preset--color--primary) !important;
+    border: solid 4px var(--wp--preset--color--primary) !important;
+    border-radius: 4px;
+    color: var(--wp--preset--color--white) !important;
+    font-weight: 500;
+    padding-top: calc(0.667em + 2px);
+    padding-right: calc(1.333em + 2px);
+    padding-bottom: calc(0.667em + 2px);
+    padding-left: calc(1.333em + 2px);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover {
+        // box-shadow: 0px 0px 30px 0px #ff750085;
+        box-shadow: 0px 0px 30px 0px rgba(255, 117, 0, 0.4);
+    }
+}
+
+.submit-btn-wrapper {
+    & > p {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+}
+
+.wpcf7-response-output {
+    color: #dc3233;
+    border: none !important;
+    background: #eeeeee;
+    border-radius: 2px;
+}
+
+.wpcf7 form.sent .wpcf7-response-output {
+    color: #389e5f !important;
+}
+
+.wpcf7 {
+    .d-flex > p {
+        flex: 1 !important;
+    }
+}

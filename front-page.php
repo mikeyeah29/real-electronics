@@ -4,7 +4,7 @@
 
 <?php // get_template_part('template-parts/blocks/hero-callout/hero-callout'); ?>
 
-<div style="padding-top: var(--wp--preset--spacing--xl); padding-bottom: var(--wp--preset--spacing--xl);" class="manufacturers-slider" data-aos="fade-up" data-aos-duration="1000">
+<div style="padding-top: var(--wp--preset--spacing--xl); padding-bottom: var(--wp--preset--spacing--xl);" class="manufacturers-slider page-start-after-hero" data-aos="fade-up" data-aos-duration="1000">
 
     <div class="container container--wide" data-aos="fade-up" data-aos-duration="1000">
 

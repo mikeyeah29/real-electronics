@@ -11,6 +11,7 @@
 @import 'vendor/blaze';
 @import 'vendor/aos';
 @import 'vendor/wp-overrides';
+@import 'vendor/contact-form-7';
 
 @import 'layout/header';
 @import 'layout/footer';
@@ -25,10 +26,11 @@
 @import 'components/tabs';
 @import 'components/dj-buttons';
 @import 'components/pioneer-search';
+@import 'components/forms';
 
-:root :where(.is-layout-flex) {
-    gap: clamp(0.5rem, 4vw, 1rem);
-}
+// .wp-block-columns {
+//     gap: clamp(0.5rem, 4vw, 2rem);
+// }
 
 .testimonial-slide {
     padding: var(--wp--preset--spacing--sm);

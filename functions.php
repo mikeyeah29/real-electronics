@@ -80,7 +80,40 @@ function getMeta($name, $post_id = null) {
 ===============================================
 */
 
-// filters go here...
+// Populate CF7 select dropdown dynamically from 'manufacturer' CPT
+add_filter('wpcf7_form_tag', 'populate_manufacturer_dropdown', 10, 2);
+
+function populate_manufacturer_dropdown($tag, $unused) {
+    if ($tag['name'] != 'manufacturer') {
+        return $tag;
+    }
+
+    // Query manufacturer CPT
+    $args = array(
+        'post_type'      => 'manufacturer',
+        'posts_per_page' => -1,
+        'post_status'    => 'publish',
+        'orderby'        => 'title',
+        'order'          => 'ASC',
+    );
+    $manufacturers = get_posts($args);
+
+    // Build options array
+    $options = array();
+    foreach ($manufacturers as $manu) {
+        $options[] = $manu->post_title;
+    }
+
+    // Add a blank first option
+    array_unshift($options, '');
+
+    // Replace tag options
+    $tag['raw_values'] = $options;
+    $tag['values'] = $options;
+
+    return $tag;
+}
+
 
 /*
 ===============================================
