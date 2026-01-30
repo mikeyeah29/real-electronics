@@ -44,6 +44,16 @@ new \RealElectronics\Theme\BlockSetup();
 
 /*
 ===============================================
+	Register Shortcodes
+===============================================
+*/
+
+require_once get_template_directory() . '/classes/shortcodes/class-svg-icon.php';
+require_once get_template_directory() . '/classes/shortcodes/class-socials.php';
+new \RealElectronics\Shortcodes\SvgIcon();
+new \RealElectronics\Shortcodes\Socials();
+/*
+===============================================
 	Register Custom Post Types
 ===============================================
 */
@@ -60,6 +70,12 @@ new \RealElectronics\CPT\Manufacturers();
 require_once get_template_directory() . '/classes/class-simple-meta-boxes.php';
 
 // meta fields go here...
+$manufacturers_meta = new \RealElectronics\Theme\SimpleMetaBoxes('manufacturer', 'Manufacturer Meta', [
+    'is_authorised' => [
+        'label' => 'Authorised Service Centre?',
+        'type' => 'checkbox'
+    ]
+]);
 
 /*
 ===============================================
@@ -123,3 +139,28 @@ function populate_manufacturer_dropdown($tag, $unused) {
 
 require_once get_template_directory() . '/classes/class-debugging.php';
 new \RealElectronics\Debugging\Debugging(true);
+
+
+
+add_shortcode( 'svg_icon', function ( $atts ) {
+
+	$atts = shortcode_atts(
+		[
+			'name' => '',
+		],
+		$atts
+	);
+
+	if ( empty( $atts['name'] ) ) {
+		return '';
+	}
+
+	ob_start();
+	?>
+	<span class="enigma-svg-icon">
+		<?php get_template_part( 'template-parts/svg/' . esc_attr( $atts['name'] ) ); ?>
+	</span>
+	<?php
+
+	return ob_get_clean();
+} );

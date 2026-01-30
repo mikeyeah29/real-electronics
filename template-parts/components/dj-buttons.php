@@ -1,12 +1,12 @@
 <div class="dj-buttons d-flex align-items-center gap-16">
-    <a href="#" class="d-flex align-items-center justify-content-center gap-8 is-cue">
+    <a href="<?php echo home_url('/request-a-repair'); ?>" class="d-flex align-items-center justify-content-center gap-8 is-cue">
         <div class="pioneer-button pioneer-button--cue font-heading">
             <?php // get_template_part('template-parts/svg/back'); ?>
             CUE
         </div>
         <span>Request a<br>Repair</span>
     </a>
-    <a href="#" class="d-flex align-items-center justify-content-center gap-8">
+    <a href="<?php echo home_url('/parts'); ?>" class="d-flex align-items-center justify-content-center gap-8">
         <div class="pioneer-button pioneer-button--play">
             <?php // get_template_part('template-parts/svg/forward'); ?>
             <svg width="100%" height="100%" viewBox="0 0 389 140" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -41,11 +41,11 @@
 					<nav class="footer-nav">
 						<h4>Repairs</h4>
 						<ul class="ul-reset has-sm-font-size pt-sm">
-							<li><a href="/repairs/pioneer" class="txt-100">Pioneer Repairs</a></li>
-							<li><a href="/repairs/guitar-amps" class="txt-100">Guitar Amps</a></li>
-							<li><a href="/repairs/mixers" class="txt-100">Mixers</a></li>
-							<li><a href="/repairs/speakers" class="txt-100">Speakers</a></li>
-							<li><a href="/repairs/pro-audio" class="txt-100">Pro Audio</a></li>
+							<li><a href="/repairs/pioneer" class="txt-300">Pioneer Repairs</a></li>
+							<li><a href="/repairs/guitar-amps" class="txt-300">Guitar Amps</a></li>
+							<li><a href="/repairs/mixers" class="txt-300">Mixers</a></li>
+							<li><a href="/repairs/speakers" class="txt-300">Speakers</a></li>
+							<li><a href="/repairs/pro-audio" class="txt-300">Pro Audio</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -54,12 +54,10 @@
 					<nav class="footer-nav">
 						<h4>Company</h4>
 						<ul class="ul-reset has-sm-font-size pt-sm">
-							<li><a href="/about" class="txt-100">About</a></li>
-							<li><a href="/manufacturers" class="txt-100">Manufacturers</a></li>
-							<li><a href="/contact" class="txt-100">Book a Repair</a></li>
-							<li><a href="/faq" class="txt-100">FAQs</a></li>
-							<li><a href="/privacy-policy">Privacy Policy</a></li>
-							<li><a href="/terms">Terms</a></li>
+							<li><a href="/about" class="txt-300">About</a></li>
+							<li><a href="/privacy-policy" class="txt-300">Privacy Policy</a></li>
+							<li><a href="/terms" class="txt-300">Terms</a></li>
+							<li><a href="/contact" class="txt-300">Contact</a></li>
 						</ul>
 					</nav>
 				</div>

@@ -45,8 +45,10 @@
 		</button>
 
 		<?php get_template_part('template-parts/header/contact'); ?>
-
-		<?php get_template_part('template-parts/header/social-links'); ?>
+		
+		<div class="pl-sm">
+			<?php get_template_part('template-parts/social-links', null, array('theme' => 'light')); ?>
+		</div>
 
 	</div>
 	<div class="header-border"></div>

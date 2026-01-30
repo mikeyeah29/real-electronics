@@ -18,6 +18,8 @@
 @import 'layout/navigation';
 @import 'layout/grid';
 
+@import 'pages/archive';
+
 @import 'components/buttons';
 @import 'components/pioneer-play';
 @import 'components/hero';
@@ -27,6 +29,7 @@
 @import 'components/dj-buttons';
 @import 'components/pioneer-search';
 @import 'components/forms';
+@import 'components/panel';
 
 // .wp-block-columns {
 //     gap: clamp(0.5rem, 4vw, 2rem);

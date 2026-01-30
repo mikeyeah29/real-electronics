@@ -35,3 +35,11 @@
     .w-md-66 { width: 66.66%; }
     .w-md-100 { width: 100%; }
 }
+
+@media (min-width: $breakpoint-lg) {
+    .w-lg-25 { width: 25%; }
+    .w-lg-50 { width: 50%; }
+    .w-lg-33 { width: 33.33%; }
+    .w-lg-66 { width: 66.66%; }
+    .w-lg-100 { width: 100%; }
+}
