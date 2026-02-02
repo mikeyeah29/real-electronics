@@ -4,8 +4,5 @@ import Edit from './edit';
 
 registerBlockType(metadata.name, {
     edit: Edit,
-    save() {
-        // Dynamic block – rendered via render.php
-        return null;
-    }
+    save: () => null,
 });

@@ -59,6 +59,10 @@
             font-weight: 600;
             font-size: 20px;
             font-family: $font-brand;
+            transition: color 0.3s ease;
+            &:hover {
+                color: var(--wp--preset--color--primary);
+            }
         }
     }
 }

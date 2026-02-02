@@ -14,9 +14,9 @@
 
     </div>
 
-    <div data-aos="fade-up" data-aos-duration="1000">
-        <?php get_template_part('template-parts/blocks/logo-slider/logo-slider'); ?>
-    </div>
+    <!-- <div data-aos="fade-up" data-aos-duration="1000">
+        <?php // get_template_part('template-parts/blocks/logo-slider/logo-slider'); ?>
+    </div> -->
 
     <div class="container container--wide" style="text-align: center;" data-aos="fade-up" data-aos-duration="1000">
         <?php get_template_part('template-parts/components/button', '', array('link' => '#', 'text' => 'View All Manufacturers', 'icon' => 'next')); ?>

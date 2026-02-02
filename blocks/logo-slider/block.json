@@ -1,0 +1,20 @@
+{
+    "apiVersion": 3,
+    "name": "real-electronics/logo-slider",
+    "title": "Logo Slider",
+    "category": "design",
+    "icon": "images-alt2",
+    "description": "A sliding row of client or partner logos.",
+    "supports": {
+        "align": [
+            "wide",
+            "full"
+        ],
+        "html": false
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style.css",
+    "editorStyle": "file:./editor.css",
+    "render": "file:./render.php",
+    "script": "file:./frontend.js"
+}

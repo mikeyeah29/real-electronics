@@ -1,0 +1,14 @@
+.wp-block-real-electronics-contact-info {
+    opacity: 0.85;
+}
+
+.contact-info__group {
+    margin-bottom: var(--wp--preset--spacing--md);
+    &:last-child {
+        margin-bottom: 0 !important;
+    }
+}
+
+.contact-info__heading {
+    margin-bottom: var(--wp--preset--spacing--sm);
+}
