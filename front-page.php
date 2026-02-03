@@ -4,7 +4,7 @@
 
 <?php // get_template_part('template-parts/blocks/hero-callout/hero-callout'); ?>
 
-<div style="padding-top: var(--wp--preset--spacing--xl); padding-bottom: var(--wp--preset--spacing--xl);" class="manufacturers-slider page-start-after-hero" data-aos="fade-up" data-aos-duration="1000">
+<!-- <div style="padding-top: var(--wp--preset--spacing--xl); padding-bottom: var(--wp--preset--spacing--xl);" class="manufacturers-slider page-start-after-hero" data-aos="fade-up" data-aos-duration="1000">
 
     <div class="container container--wide" data-aos="fade-up" data-aos-duration="1000">
 
@@ -14,21 +14,20 @@
 
     </div>
 
-    <!-- <div data-aos="fade-up" data-aos-duration="1000">
+    <div data-aos="fade-up" data-aos-duration="1000">
         <?php // get_template_part('template-parts/blocks/logo-slider/logo-slider'); ?>
-    </div> -->
-
-    <div class="container container--wide" style="text-align: center;" data-aos="fade-up" data-aos-duration="1000">
-        <?php get_template_part('template-parts/components/button', '', array('link' => '#', 'text' => 'View All Manufacturers', 'icon' => 'next')); ?>
     </div>
 
-</div>
+    <div class="container container--wide" style="text-align: center;" data-aos="fade-up" data-aos-duration="1000">
+        <?php // get_template_part('template-parts/components/button', '', array('link' => '#', 'text' => 'View All Manufacturers', 'icon' => 'next')); ?>
+    </div>
 
-<div class="about-us">
+</div> -->
+
+<!-- <div class="about-us">
     <div class="container container--wide">
         <div style="border-radius: 4px; background-color: var(--wp--preset--color--white);">
             <div class="d-flex align-items-stretch">
-            <!-- <div class="d-flex align-items-stretch" style="background-color: #fbf8f5;"> -->
                 <div class="about-us__image">
                     <img src="https://www.realelectronics.co.uk/img/RE5.jpeg" alt="Logo" style="border-radius: 4px 0px 0px 4px;">
                 </div>
@@ -39,12 +38,12 @@
                     <p>What sets us apart is a focus on precision, reliability, and manufacturer-approved processes. Every repair is carried out by experienced technicians using the correct parts and procedures, ensuring your equipment is returned fully tested, safe, and ready for use.</p>
                     <p>Whether you’re a touring DJ, a venue technician, or a musician who relies on your gear night after night, Real Electronics is a repair partner you can trust.</p>
                     <br>
-                    <?php get_template_part('template-parts/components/button', '', array('link' => '#', 'text' => 'Read More', 'icon' => 'next')); ?>
+                    <?php // get_template_part('template-parts/components/button', '', array('link' => '#', 'text' => 'Read More', 'icon' => 'next')); ?>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div style="padding-top: var(--wp--preset--spacing--xl); padding-bottom: var(--wp--preset--spacing--xl); background-color: var(--wp--preset--color--black);">
 
