@@ -1,25 +1,41 @@
 .about-stats {
-    color: var(--wp--preset--color--white);
-    &__grid {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
+
+    display: flex;
+    flex-direction: column;
 
     &__card {
         display: flex;
         flex-direction: column;
         gap: 0.75rem;
         border-right: 1px solid var(--wp--preset--color--white);
-        padding: 0 var(--wp--preset--spacing--md);
+        padding-right: var(--wp--preset--spacing--md);
+        padding-left: var(--wp--preset--spacing--md);
+
+        &:first-child {
+            padding-left: 0;
+        }
+
         &:last-child {
             border-right: none;
+            padding-right: 0;
         }
+
         @media (max-width: 781px) {
-            padding: 0 var(--wp--preset--spacing--sm);
+            padding-right: 0;
+            padding-left: 0;
             border-right: none;
             border-bottom: 1px solid var(--wp--preset--color--white);
+            padding-bottom: var(--wp--preset--spacing--md);
+            padding-top: var(--wp--preset--spacing--md);
+
+
+            &:first-child {
+                padding-top: 0;
+            }
+
             &:last-child {
                 border-bottom: none;
+                padding-bottom: 0;
             }
         }
     }
@@ -30,9 +46,11 @@
     }
 
     &__value {
-        font-family: $font-brand;
+        font-family: var(--wp--preset--font-family--rajdhani);
         font-size: var(--wp--preset--font-size--xxl);
         letter-spacing: 0.02em;
+        font-weight: 600;
+        position: relative;
     }
 
     &__label {
@@ -45,22 +63,16 @@
     }
 
     &__card.is-star &__value::after {
-        content: "\2605";
+        content: "\2605 \2605 \2605 \2605 \2605";
         color: var(--wp--preset--color--primary);
         margin-left: 6px;
-        font-size: 0.8em;
-        vertical-align: top;
+        font-size: 22px;
+        padding-bottom: 0px;
+        position: absolute;
+        top: 29px;
     }
 
-    @media (min-width: $breakpoint-md) {
-        &__grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-    }
-
-    @media (min-width: $breakpoint-lg) {
-        &__grid {
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-        }
+    @media (min-width: 782px) {
+        flex-direction: row;
     }
 }
