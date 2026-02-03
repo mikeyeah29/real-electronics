@@ -3,7 +3,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
         gap: var(--wp--preset--spacing--sm);
-        padding: 0 var(--wp--preset--spacing--sm);
+        // padding: 0 var(--wp--preset--spacing--sm);
     }
 
     &__control {
@@ -17,30 +17,71 @@
     }
 
     &__label {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 8px;
+        text-transform: uppercase;
+        gap: 4px;
         width: 100%;
-        padding: 0.75rem 1.25rem;
+        padding: 1rem 1.4rem;
         cursor: pointer;
         font-weight: 600;
-        font-size: var(--wp--preset--font-size--md);
+        font-size: var(--wp--preset--font-size--sm);
         font-family: $font-brand;
-        background: var(--wp--preset--color--black);
-        color: var(--wp--preset--color--white);
+        color: #d2ba96;
         border-radius: 6px;
-        transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+        background: #0a0a0a;
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.6);
+        transition: color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        white-space: nowrap;
     }
 
     &__label:hover {
-        color: var(--wp--preset--color--primary);
+        color: #ffd199;
         transform: translateY(-1px);
     }
 
     &__input:checked + &__label {
-        color: var(--wp--preset--color--primary);
-        background: var(--wp--preset--color--white);
+        color: #ffb347;
+        text-shadow: 0 0 8px rgba(255, 140, 0, 0.6);
+        box-shadow: 0 0 14px rgba(255, 140, 0, 0.35), inset 0 0 0 1px rgba(255, 140, 0, 0.25);
+        transform: translateY(-1px);
+        &::before {
+            background: linear-gradient(90deg, #ff9f1a 0%, #ffcf6a 35%, #ffb347 60%, #ff7a00 100%);
+        }
+    }
+
+    &__label::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 6px;
+        padding: 6px;
+        background: linear-gradient(90deg, #b19d8b, #8b8077, #b19d8b);
+        -webkit-mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+
+    &__label::after {
+        content: "";
+        position: absolute;
+        inset: 2px;
+        border-radius: 4px;
+        background: linear-gradient(180deg, #101010 0%, #060606 100%);
+        box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.8);
+        z-index: -1;
+    }
+
+    &__label svg {
+        width: 22px;
+        height: 22px;
+        flex: 0 0 auto;
+        color: currentColor;
     }
 
     &__content {
