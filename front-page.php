@@ -66,13 +66,7 @@
 </div>
 
 
-<div class="reviews pb-xl" style="background-color: var(--wp--preset--color--black);">
-    <div class="container container--wide" style="color: var(--wp--preset--color--white);">
-
-        <?php get_template_part('template-parts/blocks/testimonial-slider/testimonial-slider'); ?>
-
-    </div>
-</div>
+<?php echo do_blocks('<!-- wp:real-electronics/reviews /-->'); ?>
 
 <!-- <div class="brushed-metal" style="width: 100%; height: 600px;">
     <div class="container container--wide">
