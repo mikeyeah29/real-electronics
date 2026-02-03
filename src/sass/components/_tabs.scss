@@ -1,77 +1,61 @@
-.tabs {
-    border-radius: 2px;
-}
-
-/* Hide radio buttons */
-.tabs input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-}
-
-/* Tab labels */
-.tabs label {
-    display: inline-block;
-    padding: 0.75rem 1.25rem;
-    margin-right: 0.25rem;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    font-weight: 500;
-    transition: color 0.2s ease, border-color 0.2s ease;
-    font-size: var(--wp--preset--font-size--md);
-    font-family: $font-brand;
-    width: 100%;
-    background: var(--wp--preset--color--black);
-    color: var(--wp--preset--color--white);
-    align-items: center;
-    display: flex;
-    gap: 8px;
-}
-
-.tabs label:hover {
-    color: #ff7500;
-}
-
-.tabs-controls {
-    padding: 0px 1rem;
-}
-
-.tab-control {
-    flex-grow: 1;
-    text-align: center;
-    border-radius: 4px;
-    background: var(--wp--preset--color--primary) !important;
-    padding: 0.75rem 1.25rem;
-    label {
-        background: var(--wp--preset--color--black) !important;
+.repairs-tabs {
+    &__controls {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: var(--wp--preset--spacing--sm);
+        padding: 0 var(--wp--preset--spacing--sm);
     }
-}
 
-/* Active tab */
-#tab-amps:checked+label,
-#tab-mixers:checked+label,
-#tab-speakers:checked+label,
-#tab-dj:checked+label,
-#tab-pro:checked+label {
-    // border-bottom-color: #ff7500;
-    color: #ff7500;
-    background: var(--wp--preset--color--white);
-    border-radius: 4px 4px 0 0;
-}
+    &__control {
+        min-width: 0;
+    }
 
-/* Content wrapper */
-.tab-content {
-    padding-top: 2rem;
-    background: white;
-    border-radius: 4px;
-    .panel {
+    &__input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &__label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        padding: 0.75rem 1.25rem;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: var(--wp--preset--font-size--md);
+        font-family: $font-brand;
+        background: var(--wp--preset--color--black);
+        color: var(--wp--preset--color--white);
+        border-radius: 6px;
+        transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    }
+
+    &__label:hover {
+        color: var(--wp--preset--color--primary);
+        transform: translateY(-1px);
+    }
+
+    &__input:checked + &__label {
+        color: var(--wp--preset--color--primary);
+        background: var(--wp--preset--color--white);
+    }
+
+    &__content {
+        margin-top: var(--wp--preset--spacing--md);
+        background: var(--wp--preset--color--white);
+        border-radius: 8px;
+        box-shadow: var(--wp--preset--shadow--soft);
+    }
+
+    &__panel {
+        display: none;
         padding: var(--wp--preset--spacing--md);
     }
-}
 
-.repairs-tabs .panel {
-    display: none;
-}
-
-.repairs-tabs .panel.is-active {
-    display: block;
+    &__panel.is-active {
+        display: block;
+    }
 }

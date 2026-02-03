@@ -298,3 +298,7 @@
         }
     }
 }
+
+.sunburst-bg {
+    background: linear-gradient(to right, var(--wp--preset--color--secondary), var(--wp--preset--color--primary)) !important;
+}

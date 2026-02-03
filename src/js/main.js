@@ -2,7 +2,9 @@
 import BlazeSlider from 'blaze-slider';
 
 import AOS from 'aos';
-AOS.init();
+AOS.init({
+    duration: 1000
+});
 
 window.addEventListener('load', () => {
     AOS.refresh();
@@ -64,14 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     const panels = document.querySelectorAll(
-        '.repairs-tabs .panel'
+        '.repairs-tabs .repairs-tabs__panel'
     );
 
-    function showPanel(panelClass) {
+    function showPanel(panelKey) {
         panels.forEach(panel => {
             panel.classList.toggle(
                 'is-active',
-                panel.classList.contains(panelClass)
+                panel.dataset.panel === panelKey
             );
         });
     }
@@ -80,9 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
         tab.addEventListener('change', () => {
             if (!tab.checked) return;
 
-            // tab-amps → amps
-            const panelClass = tab.id.replace('tab-', '');
-            showPanel(panelClass);
+            const panelKey = tab.dataset.panel || tab.id.replace('tab-', '');
+            showPanel(panelKey);
         });
     });
 
@@ -92,7 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     if (checked) {
-        showPanel(checked.id.replace('tab-', ''));
+        const panelKey = checked.dataset.panel || checked.id.replace('tab-', '');
+        showPanel(panelKey);
     }
 });
 
