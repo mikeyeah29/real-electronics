@@ -1,7 +1,7 @@
 <section class="repairs-tabs" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
     <div class="repairs-tabs__controls" role="tablist" aria-label="Repair categories">
 
-        <div class="repairs-tabs__control">
+        <div class="repairs-tabs__control repairs-tabs__control--blue">
             <input class="repairs-tabs__input" type="radio" name="repair-tabs" id="tab-amps" data-panel="amps" checked>
             <label class="repairs-tabs__label" for="tab-amps">
                 <?php get_template_part('template-parts/svg/amp'); ?>
@@ -9,7 +9,7 @@
             </label>
         </div>
 
-        <div class="repairs-tabs__control">
+        <div class="repairs-tabs__control repairs-tabs__control--green">
             <input class="repairs-tabs__input" type="radio" name="repair-tabs" id="tab-mixers" data-panel="mixers">
             <label class="repairs-tabs__label" for="tab-mixers">
                 <?php get_template_part('template-parts/svg/mixer'); ?>
@@ -17,7 +17,7 @@
             </label>
         </div>
 
-        <div class="repairs-tabs__control">
+        <div class="repairs-tabs__control repairs-tabs__control--purple">
             <input class="repairs-tabs__input" type="radio" name="repair-tabs" id="tab-speakers" data-panel="speakers">
             <label class="repairs-tabs__label" for="tab-speakers">
                 <?php get_template_part('template-parts/svg/speaker'); ?>
@@ -25,7 +25,7 @@
             </label>
         </div>
 
-        <div class="repairs-tabs__control">
+        <div class="repairs-tabs__control repairs-tabs__control--orange">
             <input class="repairs-tabs__input" type="radio" name="repair-tabs" id="tab-dj" data-panel="dj">
             <label class="repairs-tabs__label" for="tab-dj">
                 <?php get_template_part('template-parts/svg/laptop'); ?>
@@ -33,7 +33,7 @@
             </label>
         </div>
 
-        <div class="repairs-tabs__control">
+        <div class="repairs-tabs__control repairs-tabs__control--cyan">
             <input class="repairs-tabs__input" type="radio" name="repair-tabs" id="tab-pro" data-panel="pro">
             <label class="repairs-tabs__label" for="tab-pro">
                 <?php get_template_part('template-parts/svg/pro'); ?>

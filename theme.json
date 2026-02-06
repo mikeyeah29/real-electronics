@@ -52,6 +52,11 @@
                     "slug": "accent-4",
                     "color": "#001e47",
                     "name": "Accent 4"
+                },
+                {
+                    "slug": "accent-5",
+                    "color": "#470000",
+                    "name": "Accent 5"
                 }
             ]
         },
@@ -194,7 +199,7 @@
         "elements": {
             "link": {
                 "color": {
-                    "text": "var(--wp--preset--color--primary)"
+                    "text": "var(--wp--preset--color--black)"
                 },
                 "typography": {
                     "fontWeight": "600"

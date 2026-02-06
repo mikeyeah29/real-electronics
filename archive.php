@@ -27,7 +27,7 @@ get_header();
                             <a href="<?php the_permalink(); ?>" class="manufacturer-card__link">
 
                                 <?php if ( get_post_meta(get_the_ID(), 'is_authorised', true) ) : ?>
-                                    <span class="manufacturer-card__badge">
+                                    <span class="panel-badge">
                                         Authorised Service Centre
                                     </span>
                                 <?php endif; ?>

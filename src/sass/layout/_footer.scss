@@ -8,6 +8,10 @@
             height: auto;
         }
     }
+    a {
+        color: var(--wp--preset--color--white) !important;
+        text-decoration: none !important;
+    }
 }
 
 .site-footer h4::after {

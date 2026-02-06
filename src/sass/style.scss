@@ -19,6 +19,7 @@
 @import 'layout/grid';
 
 @import 'pages/archive';
+@import 'pages/single';
 
 @import 'components/buttons';
 @import 'components/pioneer-play';
@@ -270,7 +271,8 @@
 
 
 
-.contact-side-bar {
+.contact-side-bar,
+.col-divider {
     border-bottom: solid 2px #e5e5e5;
     @media (min-width: $breakpoint-md) {
         border-bottom: none;
@@ -301,4 +303,19 @@
 
 .sunburst-bg {
     background: linear-gradient(to right, var(--wp--preset--color--secondary), var(--wp--preset--color--primary)) !important;
+}
+
+.panel-badge {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: linear-gradient(to bottom right, var(--wp--preset--color--primary), var(--wp--preset--color--secondary));
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.35rem 0.6rem;
+    border-radius: var(--wp--preset--radius--sm);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 10px 20px;
 }

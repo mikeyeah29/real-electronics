@@ -1,0 +1,26 @@
+.repair-process {
+    .panel {
+        position: relative;
+        height: auto !important;
+        .panel-badge {
+            right: 0px;
+            left: auto;
+            border-radius: 0 4px 0 0;
+        }
+    }
+}
+
+.warranty-repairs {
+    .wp-block-group {
+        position: relative;
+        svg {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: var(--wp--preset--spacing--sm);
+            width: 200px;
+            height: 200px;
+            fill: #fe750121 !important;
+        }
+    }
+}

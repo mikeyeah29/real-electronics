@@ -3,6 +3,7 @@
 $link = $args['link'] ?? '#';
 $text = $args['text'] ?? 'Default Button';
 $color_slug = $args['color_slug'] ?? 'primary';
+$text_color = $args['text_color'] ?? 'white';
 $icon = $args['icon'] ?? false;
 $solid = $args['solid'] ?? false;
 
@@ -17,7 +18,7 @@ if ($color_slug) {
 
 ?>
 
-<a href="<?php echo $link; ?>" class="<?php echo implode(' ', $classes); ?>" style="color: var(--wp--preset--color--secondary);">
+<a href="<?php echo $link; ?>" class="<?php echo implode(' ', $classes); ?>" style="color: var(--wp--preset--color--<?php echo $text_color; ?>);">
     <div class="d-flex align-items-center gap-2">
         <?php echo $text; ?>
         <?php if ($icon) { ?>
