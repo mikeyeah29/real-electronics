@@ -44,6 +44,9 @@ class Manufacturers {
 				'slug'				=> 'manufacturers',
 				'with_front'		=> false,
 			],
+			'template'				=> [
+				[ 'core/pattern', [ 'slug' => 'real-electronics/manufacturer-single' ] ],
+			],
 		];
 
 		register_post_type($this->post_type, $args);

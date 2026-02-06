@@ -18,6 +18,12 @@
             <a href="<?php echo home_url('/manufacturers'); ?>">Manufacturers</a>
         </li>
         <li>
+            <a href="<?php echo home_url('/manufacturer/pioneer'); ?>">Manufacturer: Pioneer</a>
+        </li>
+        <li>
+            <a href="<?php echo home_url('/manufacturer/marshall'); ?>">Manufacturer: Marshall</a>
+        </li>
+        <li>
             <a href="<?php echo home_url('/request-a-repair'); ?>">Request a Repair</a>
         </li>
         <li>

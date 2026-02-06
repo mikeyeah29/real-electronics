@@ -1,0 +1,113 @@
+.pioneer-slip {
+    --w: 164px;
+    --h: 46px;
+
+    --metal-a: #000000;
+    --metal-b: #000000;
+
+    width: var(--w);
+    height: var(--h);
+    padding: 0;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    background:
+        linear-gradient(90deg,
+            var(--metal-a) 0%,
+            var(--metal-b) 18%,
+            var(--metal-a) 36%,
+            var(--metal-b) 54%,
+            var(--metal-a) 72%,
+            var(--metal-b) 100%);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.14),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.65),
+        0 6px 14px rgba(0, 0, 0, 0.6);
+}
+
+/* The black recessed button body */
+.pioneer-slip::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border-radius: 5px;
+    background: linear-gradient(180deg, #626262 0%, #373737 55%, #393939 100%);
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.35), inset 0 -2px 3px rgba(0, 0, 0, 0.35), 0 0 10px #808080;
+}
+
+/* Red illuminated label window with BLACK text */
+.pioneer-slip__label {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    white-space: nowrap;
+
+    /* Make the red “window” */
+    width: calc(100% - 25px);
+    height: 22px;
+    margin: 0 auto;
+    border-radius: 2px;
+
+    background: linear-gradient(to right, #ff3d3d 0%, #ff6a6a 25%, #ff6a6a 75%, #ff3d3d 100%);
+    // box-shadow:
+    //     0 0 0 1px rgba(0, 0, 0, 0.65),
+    //     inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    //     inset 0 -2px 3px rgba(0, 0, 0, 0.35),
+    //     0 0 10px rgba(255, 60, 60, 0.45);
+
+    color: #0a0a0a;
+    /* black text */
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    /* slight crispness like a printed legend */
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.18);
+
+    &.is-green {
+        background: linear-gradient(to right, #04cf0b 0%, #7bdd7e 25%, #7bdd7e 75%, #04cf0b 100%);
+    }
+}
+
+/* Hover: a touch more glow on the red window */
+.pioneer-slip:hover .pioneer-slip__label {
+    box-shadow:
+        // 0 0 0 1px rgba(0, 0, 0, 0.65),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -2px 3px rgba(0, 0, 0, 0.35),
+        0 0 14px rgba(255, 60, 60, 0.65);
+    &.is-green {
+        box-shadow:
+            0 0 0 1px rgba(0, 0, 0, 0.65),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4),
+            inset 0 -2px 3px rgba(0, 0, 0, 0.35),
+            0 0 14px rgba(4, 207, 11, 0.65);
+    }
+}
+
+/* Pressed state */
+.pioneer-slip:active {
+    transform: translateY(1px);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.10),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.8),
+        0 3px 8px rgba(0, 0, 0, 0.7);
+}
+
+.pioneer-slip:active::before {
+    inset: 6px;
+}
+
+/* Optional “ON” latch class (slightly brighter window) */
+.pioneer-slip.is-active .pioneer-slip__label {
+    background: linear-gradient(180deg, #ff8a8a 0%, #ff4a4a 55%, #e01f1f 100%);
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.65),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45),
+        inset 0 -2px 3px rgba(0, 0, 0, 0.35),
+        0 0 18px rgba(255, 60, 60, 0.8);
+}

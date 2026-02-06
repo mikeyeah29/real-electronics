@@ -1,0 +1,13 @@
+.star-rating {
+    display: flex;
+    gap: 4px;
+    .star-rating__star {
+        &--filled {
+            color: #ffd700;
+            color: var(--wp--preset--color--primary);
+        }
+        &--empty {
+            color: #373737;
+        }
+    }
+}

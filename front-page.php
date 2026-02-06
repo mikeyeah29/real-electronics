@@ -68,11 +68,4 @@
 
 <?php echo do_blocks('<!-- wp:real-electronics/reviews /-->'); ?>
 
-<!-- <div class="brushed-metal" style="width: 100%; height: 600px;">
-    <div class="container container--wide">
-        <h2>Testimonials</h2>
-        <p>What our customers say about us</p>
-    </div>
-</div> -->
-
 <?php get_footer(); ?>
