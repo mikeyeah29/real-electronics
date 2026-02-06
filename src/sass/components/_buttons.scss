@@ -1,7 +1,104 @@
 /* Button Base
 ====================================*/
+.wp-block-button__link,
+.wp-element-button {
+    --button-bg: var(--wp--preset--color--primary);
+    --button-border: rgba(0, 0, 0, 0.35);
+    --button-highlight: rgba(255, 255, 255, 0.4);
+    --button-shadow: rgba(0, 0, 0, 0);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.4rem;
+    font-weight: 500 !important;
+    font-size: var(--wp--preset--font-size--sm) !important;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    border-radius: 3px;
+    border: 2px solid var(--button-border);
+    color: var(--wp--preset--color--black) !important;
+    text-transform: uppercase !important;
+    background-color: var(--button-bg);
+    background-image: radial-gradient(circle at 50% 40%, var(--button-highlight) 0%, rgba(255, 255, 255, 0) 75%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.18), var(--button-shadow));
+    background-blend-mode: screen, multiply;
+    // box-shadow: 0 8px 8px rgba(0, 0, 0, 0.16);
+    transition: all 0.2s ease;
+    position: relative;
+    isolation: isolate;
 
-.wp-block-button__link {
-    border-radius: 4px !important;
-    background: transparent !important;
+    &:hover {
+        // transform: translateY(-2px);
+        --button-highlight: rgba(255, 255, 255, 0.5);
+        // box-shadow: 0 16px 26px rgba(0, 0, 0, 0.22);
+        text-decoration: none;
+    }
+
+    &:active {
+        transform: translateY(1px);
+        // box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
+    }
+
+    &:focus-visible {
+        outline: 3px solid rgba(255, 255, 255, 0.6);
+        outline-offset: 3px;
+    }
+}
+
+.wp-block-button__link.is-style-outline,
+.wp-element-button.is-style-outline {
+    background-color: transparent;
+    background-image: none;
+    color: var(--wp--preset--color--black);
+    border-color: currentColor;
+    box-shadow: none;
+}
+
+.wp-block-button__link.has-background,
+.wp-element-button.has-background {
+    background-image: radial-gradient(circle at 50% 40%, var(--button-highlight) 0%, rgba(255, 255, 255, 0) 75%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.18), var(--button-shadow));
+    background-blend-mode: screen, multiply;
+}
+
+/* Has Primary Background Color 
+====================================*/
+.wp-block-button__link.has-primary-background-color,
+.wp-element-button.has-primary-background-color {
+    --button-bg: var(--wp--preset--color--primary);
+}
+
+/* Has Secondary Background Color 
+====================================*/
+.wp-block-button__link.has-secondary-background-color,
+.wp-element-button.has-secondary-background-color {
+    --button-bg: var(--wp--preset--color--secondary);
+}
+
+/* Has Accent Background Color 
+====================================*/
+.wp-block-button__link.has-accent-background-color,
+.wp-element-button.has-accent-background-color {
+    --button-bg: var(--wp--preset--color--accent);
+}
+
+.wp-block-button__link.has-accent-2-background-color,
+.wp-element-button.has-accent-2-background-color {
+    --button-bg: var(--wp--preset--color--accent-2);
+}
+
+.wp-block-button__link.has-accent-3-background-color,
+.wp-element-button.has-accent-3-background-color {
+    --button-bg: var(--wp--preset--color--accent-3);
+}
+
+.wp-block-button__link.has-accent-4-background-color,
+.wp-element-button.has-accent-4-background-color {
+    --button-bg: var(--wp--preset--color--accent-4);
+}
+
+.wp-block-button__link.has-accent-5-background-color,
+.wp-element-button.has-accent-5-background-color {
+    --button-bg: var(--wp--preset--color--accent-5);
 }
