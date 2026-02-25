@@ -11,6 +11,7 @@
         align-items: center;
         padding: 0.5rem $body-padding-mobile;
         background-color: #000;
+        height: $header-height-mobile;
         @media (min-width: 600px) {
             padding: 0.5rem $body-padding;
         }
@@ -34,6 +35,14 @@
                     width: 24px;
                 }
             }
+        }
+    }
+    &__logo {
+        @media (max-width: 768px) {
+            max-width: 228px;
+        }
+        @media (min-width: 768px) and (max-width: 840px) {
+            max-width: 200px;
         }
     }
 }
@@ -74,11 +83,56 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     a {
         color: #fff;
         font-family: $font-brand;
         font-size: 16px;
         font-weight: 600;
         // margin-left: 20px;
+    }
+}
+
+.mobile-menu {
+    padding: 32px;
+    background: $gradient-primary;
+    position: fixed;
+    top: $header-height-mobile + 2px;
+    left: -100%;
+    height: calc(100% - $header-height-mobile);
+    display: flex;
+    z-index: 5;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: left 0.3s ease;
+    &.is-active {
+        left: 0px;
+    }
+    .site-header__nav {
+        ul {
+            display: block;
+        }
+    }
+    .primary-menu {
+        li {
+            display: block;
+            margin-bottom: 16px;
+            a {
+                color: #fff;
+                font-family: $font-brand;
+                font-size: 24px;
+                display: block;
+            }
+        }
+    }
+    .dj-buttons {
+        a {
+            margin-bottom: 1rem;
+        }
+    }
+    .site-header-contact {
+        border-top: 1px solid #ffffff30;
+        padding-top: 1rem;
     }
 }

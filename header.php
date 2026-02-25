@@ -35,39 +35,63 @@
 			<?php endif; ?>
 		</div>
 
-		<button class="site-header__toggle"
+		<!-- <button class="site-header__toggle d-block d-md-none"
 			aria-controls="primary-menu"
 			aria-expanded="false"
-			aria-label="<?php esc_attr_e('Toggle navigation', 'realelectronics'); ?>">
+			aria-label="<?php // esc_attr_e('Toggle navigation', 'realelectronics'); ?>">
 			<span></span>
 			<span></span>
 			<span></span>
+		</button> -->
+
+		<button class="hamburger hamburger--spin d-block d-md-none" type="button">
+			<span class="hamburger-box d-flex">
+				<span class="hamburger-inner"></span>
+			</span>
 		</button>
 
-		<?php get_template_part('template-parts/header/contact'); ?>
+		<div class="d-none d-md-block ml-auto">
+			<?php get_template_part('template-parts/header/contact'); ?>
+		</div>
 		
-		<div class="pl-sm">
+		<div class="d-none d-md-block pl-sm">
 			<?php get_template_part('template-parts/social-links', null, array('theme' => 'light')); ?>
 		</div>
 
 	</div>
 	<div class="header-border"></div>
-	<div class="site-header__bottom d-flex align-items-center justify-content-between">
-
-		<nav class="site-header__nav" id="primary-menu" aria-label="<?php esc_attr_e('Primary navigation', 'realelectronics'); ?>">
-			<?php
-				wp_nav_menu([
-					'theme_location' => 'primary',
-					'menu_class'     => 'primary-menu',
-					'container'      => false,
-					'fallback_cb'    => false,
-				]);
-			?>
-		</nav>
-
-		<?php // get_template_part('template-parts/components/pioneer-btn', null, array('text' => 'REPAIR ENQUIRY', 'link' => '#', 'class' => 'ml-auto mr-xs')); ?>
-		<?php //get_template_part('template-parts/components/pioneer-btn', null, array('text' => 'PARTS', 'link' => '#', 'class' => 'ml-xs', 'style' => 'is-green')); ?>
-
+	<div class="site-header__bottom d-none d-md-flex align-items-center justify-content-between">
+		<?php get_template_part('template-parts/header/primary-menu'); ?>
 		<?php get_template_part('template-parts/components/dj-buttons'); ?>
 	</div>
+
 </header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu d-block d-md-none mt-auto">
+	<div class="d-flex mb-auto mobile-menu-inner">
+		<div class="w-50">
+			<?php get_template_part('template-parts/header/primary-menu'); ?>
+		</div>
+		<div class="w-50">
+			<?php get_template_part('template-parts/components/dj-buttons'); ?>
+		</div>
+	</div>
+	<?php get_template_part('template-parts/header/contact'); ?>
+</div>
+
+<script>
+
+	document.addEventListener('DOMContentLoaded', function() {
+
+		const hamburger = document.querySelector('.hamburger');
+		const mobileMenu = document.querySelector('.mobile-menu');
+
+		hamburger.addEventListener('click', function() {
+			hamburger.classList.toggle('is-active');
+			mobileMenu.classList.toggle('is-active');
+		});
+
+	});
+
+</script>

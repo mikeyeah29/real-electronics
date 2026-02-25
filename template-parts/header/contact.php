@@ -19,7 +19,7 @@
     </li>
 </ul> -->
 
-<ul class="site-header-contact gap-16 ml-auto">
+<ul class="site-header-contact gap-16 ml-md-auto">
     <!-- <li>
         <a href="#" class="d-flex align-items-start gap-8" style="margin-top: 3px; font-size: 18px;">
             <?php // get_template_part('template-parts/svg/clock'); ?>

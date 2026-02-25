@@ -1,12 +1,4 @@
 .dj-buttons {
-    // position: fixed;
-    // bottom: 0;
-    // right: 0px;
-    // z-index: 1000;
-
-    position: absolute;
-    top: -6px;
-    right: 2rem;
     span {
         font-size: 14px;
         color: var(--wp--preset--color--white);
@@ -35,5 +27,10 @@
                 }
             }
         }
+    }
+    @media (min-width: 768px) {
+        position: absolute;
+        top: -6px;
+        right: 2rem;
     }
 }

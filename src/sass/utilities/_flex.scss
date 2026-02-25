@@ -17,11 +17,11 @@
 .flex-col { flex-direction: column; }
 
 @media (min-width: 768px) {
-    .d-md-flex { display: flex; }
+    .d-md-flex { display: flex !important; }
     .justify-content-md-center { justify-content: center; }
     .justify-content-md-between { justify-content: space-between; }
-    .align-items-md-center { align-items: center; }
-    .align-items-md-end { align-items: flex-end; }
-    .align-items-md-stretch { align-items: stretch; }
-    .flex-wrap-md { flex-wrap: wrap; }
+    .align-items-md-center { align-items: center !important; }
+    .align-items-md-end { align-items: flex-end !important; }
+    .align-items-md-stretch { align-items: stretch !important; }
+    .flex-wrap-md { flex-wrap: wrap !important; }
 }
