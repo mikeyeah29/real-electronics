@@ -25,13 +25,13 @@ label:has(.wpcf7-file) {
 }
 
 /* Custom drop zone */
-.wpcf7-form-control-wrap[data-name="attachment"] {
+.wpcf7-form-control-wrap[data-name="media-for-repair"] {
     display: block;
     margin-top: 0.5rem;
     position: relative;
 }
 
-.wpcf7-form-control-wrap[data-name="attachment"]::before {
+.wpcf7-form-control-wrap[data-name="media-for-repair"]::before {
     content: "Click to upload file";
     display: flex;
     align-items: center;
@@ -50,13 +50,13 @@ label:has(.wpcf7-file) {
 }
 
 /* Hover */
-label:hover .wpcf7-form-control-wrap[data-name="attachment"]::before {
+label:hover .wpcf7-form-control-wrap[data-name="media-for-repair"]::before {
     border-color: var(--wp--preset--color--primary, #000);
     background: rgba(0, 0, 0, 0.02);
 }
 
 /* Focus (keyboard accessibility) */
-label:focus-within .wpcf7-form-control-wrap[data-name="attachment"]::before {
+label:focus-within .wpcf7-form-control-wrap[data-name="media-for-repair"]::before {
     outline: none;
     border-color: var(--wp--preset--color--primary, #000);
     box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);

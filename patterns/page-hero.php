@@ -20,9 +20,9 @@
 
 	<div class="wp-block-cover__inner-container">
 		<!-- wp:paragraph {"align":"center","style":{"typography":{"fontWeight":"600"}},"textColor":"white","fontSize":"xxl"} -->
-		<p class="has-text-align-center has-white-color has-text-color has-xxl-font-size" style="font-weight:600">
+		<h1 class="has-text-align-center has-white-color has-text-color has-xxl-font-size" style="font-weight:600">
 			Request a Repair
-		</p>
+		</h1>
 		<!-- /wp:paragraph -->
 	</div>
 

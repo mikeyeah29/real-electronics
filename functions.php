@@ -59,7 +59,9 @@ new \RealElectronics\Shortcodes\Socials();
 */
 
 require_once get_template_directory() . '/classes/cpt/class-manufacturers.php';
+require_once get_template_directory() . '/classes/cpt/class-repair-services.php';
 new \RealElectronics\CPT\Manufacturers();
+new \RealElectronics\CPT\RepairServices();
 
 /*
 ===============================================
@@ -75,6 +77,45 @@ $manufacturers_meta = new \RealElectronics\Theme\SimpleMetaBoxes('manufacturer',
         'label' => 'Authorised Service Centre?',
         'type' => 'checkbox'
     ]
+]);
+
+$repair_services_meta = new \RealElectronics\Theme\SimpleMetaBoxes('repair_service', 'Repair Service Meta', [
+    // 'repair_panel_title' => [
+    //     'label' => 'Panel Title (optional)',
+    //     'type' => 'text'
+    // ],
+    'repair_tab_icon' => [
+        'label' => 'Tab Icon',
+        'type' => 'select',
+        'options' => [
+            '' => 'Select icon',
+            'amp' => 'Amp',
+            'mixer' => 'Mixer',
+            'speaker' => 'Speaker',
+            'laptop' => 'Laptop',
+            'pro' => 'Pro',
+        ]
+    ],
+    'repair_tab_colour' => [
+        'label' => 'Tab Colour',
+        'type' => 'select',
+        'options' => [
+            '' => 'Default',
+            'blue' => 'Blue',
+            'green' => 'Green',
+            'purple' => 'Purple',
+            'orange' => 'Orange',
+            'cyan' => 'Cyan',
+        ]
+    ],
+    // 'repair_cta_label' => [
+    //     'label' => 'CTA Label',
+    //     'type' => 'text'
+    // ],
+    // 'repair_cta_url' => [
+    //     'label' => 'CTA URL',
+    //     'type' => 'text'
+    // ],
 ]);
 
 /*
