@@ -11,6 +11,17 @@ class Manufacturers {
 
 	public function __construct() {
 		add_action('init', [ $this, 'register_post_type' ]);
+		add_filter('use_block_editor_for_post_type', [ $this, 'disable_gutenberg' ], 10, 2);
+	}
+
+	public function disable_gutenberg( $use_block_editor, $post_type ) {
+
+		if ( $post_type === $this->post_type ) {
+			return false;
+		}
+
+		return $use_block_editor;
+
 	}
 
 	public function register_post_type(): void {
@@ -38,15 +49,15 @@ class Manufacturers {
 			'hierarchical'			=> false,
 			'menu_position'			=> 20,
 			'menu_icon'				=> 'dashicons-store',
-			'supports'				=> [ 'title', 'editor', 'thumbnail', 'excerpt' ],
+			'supports'				=> [ 'title', 'thumbnail' ],
 			'show_in_rest'			=> true,
 			'rewrite'				=> [
 				'slug'				=> 'manufacturers',
 				'with_front'		=> false,
 			],
-			'template'				=> [
-				[ 'core/pattern', [ 'slug' => 'real-electronics/manufacturer-single' ] ],
-			],
+			// 'template'				=> [
+			// 	[ 'core/pattern', [ 'slug' => 'real-electronics/manufacturer-single' ] ],
+			// ],
 		];
 
 		register_post_type($this->post_type, $args);

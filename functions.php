@@ -120,6 +120,15 @@ $repair_services_meta = new \RealElectronics\Theme\SimpleMetaBoxes('repair_servi
 
 /*
 ===============================================
+	Register ACF Fields
+===============================================
+*/
+
+require_once get_template_directory() . '/classes/acf/class-manufacturer-fields.php';
+new \RealElectronics\ACF\ManufacturerFields();
+
+/*
+===============================================
 	Functions
 ===============================================
 */

@@ -110,3 +110,7 @@
         transform: translateX(100%);
     }
 }
+
+.hero .greyscale {
+    filter: grayscale(100%) contrast(1.1) brightness(0.8);
+}
