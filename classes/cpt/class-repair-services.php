@@ -11,6 +11,17 @@ class RepairServices {
 
 	public function __construct() {
 		add_action('init', [ $this, 'register_post_type' ]);
+		add_filter('use_block_editor_for_post_type', [ $this, 'disable_gutenberg' ], 10, 2);
+	}
+
+	public function disable_gutenberg( $use_block_editor, $post_type ) {
+
+		if ( $post_type === $this->post_type ) {
+			return false;
+		}
+
+		return $use_block_editor;
+
 	}
 
 	public function register_post_type(): void {
@@ -34,7 +45,7 @@ class RepairServices {
 		$args = [
 			'labels'				=> $labels,
 			'public'				=> true,
-			'has_archive'			=> false,
+			'has_archive'			=> true,
 			'hierarchical'			=> false,
 			'menu_position'			=> 21,
 			'menu_icon'				=> 'dashicons-admin-tools',

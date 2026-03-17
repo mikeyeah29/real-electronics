@@ -6,7 +6,7 @@ get_header();
 <main id="primary" class="site-main archive">
 
 	<div class="archive-hero">
-		<h1 class="has-xxl-font-size">Manufacturers</h1>
+		<h1 class="has-xxl-font-size">Repairs</h1>
 	</div>
 
 	<div class="container container--wide archive-content pt-lg pb-lg">
@@ -26,21 +26,10 @@ get_header();
 
                             <a href="<?php the_permalink(); ?>" class="archive-card__link">
 
-                                <?php if ( get_post_meta(get_the_ID(), 'is_authorised', true) ) : ?>
-                                    <span class="panel-badge">
-                                        Authorised Service Centre
-                                    </span>
-                                <?php endif; ?>
-
-                                <div class="archive-card__logo">
-                                    <?php 
-
-									$manufacturer = new \RealElectronics\Models\Manufacturer(get_the_ID());
-									$logo = $manufacturer->getLogo();
-
-									if ( $logo ) : ?>
-										<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
-									<?php endif; ?>
+                                <div class="archive-card__image">
+                                    <?php the_post_thumbnail('medium', [
+                                        'alt' => get_the_title() . ' repairs'
+                                    ]); ?>
                                 </div>
 
                                 <h3 class="archive-card__title">

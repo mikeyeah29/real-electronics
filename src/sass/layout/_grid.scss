@@ -1,15 +1,15 @@
 .container {
     width: 100%;
-    max-width: var(--wp--style--global--content-size);
+    max-width: calc(var(--wp--style--global--content-size) + 64px) !important;
     margin-inline: auto;
     padding-inline: 32px;
 
     &--wide {
-        max-width: var(--wp--style--global--wide-size);
+        max-width: calc(var(--wp--style--global--wide-size) + 64px) !important;
     }
 
     &--full {
-        max-width: 100%;
+        max-width: 100% !important;
     }
 }
 
@@ -21,6 +21,12 @@
 
 .gap-16 { gap: 16px; }
 .gap-32 { gap: 32px; }
+
+.gap-xs { gap: var(--wp--preset--spacing--xs) !important; }
+.gap-sm { gap: var(--wp--preset--spacing--sm) !important; }
+.gap-md { gap: var(--wp--preset--spacing--md) !important; }
+.gap-lg { gap: var(--wp--preset--spacing--lg) !important; }
+.gap-xl { gap: var(--wp--preset--spacing--xl) !important; }
 
 .w-25 { width: 25%; }
 .w-50 { width: 50%; }

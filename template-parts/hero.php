@@ -8,6 +8,11 @@ $logo_url = $logo ? $logo['url'] : '';
 $logo_alt = $logo ? $logo['alt'] : $title;
 $logo_width = $logo ? $logo['width'] : 330;
 
+$button_primary_text = $args['button_primary_text'] ?? null;
+$button_primary_url = $args['button_primary_url'] ?? null;
+$button_secondary_text = $args['button_secondary_text'] ?? null;
+$button_secondary_url = $args['button_secondary_url'] ?? null;
+
 ?>
 
 <div class="wp-block-cover hero">
@@ -34,7 +39,7 @@ $logo_width = $logo ? $logo['width'] : 330;
 
 				<?php if ( $logo_url ) : ?>
 
-					<figure class="wp-block-image aligncenter size-full is-resized" data-aos="fade-up">
+					<figure class="wp-block-image aligncenter size-full is-resized single-manufacturer-logo" data-aos="fade-up">
 
 						<img
 							src="<?php echo esc_url($logo_url); ?>"
@@ -61,31 +66,36 @@ $logo_width = $logo ? $logo['width'] : 330;
 					Repair and servicing for <?php echo esc_html( $manufacturer ); ?> equipment, by experienced technicians.
 				</p>
 
-				<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-block-buttons-is-layout-flex aos-init aos-animate" data-aos="fade-up">
+				<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-block-buttons-is-layout-flex" data-aos="fade-up">
 
-					<div class="wp-block-button">
 
-						<a
-							class="wp-block-button__link has-primary-background-color has-background has-sm-font-size wp-element-button"
-							href="/request-a-repair/"
-							style="border-radius:4px"
-						>
-							Repair Enquiry
-						</a>
+					<?php if ( $button_primary_text && $button_primary_url ) : ?>
+						<div class="wp-block-button">
 
-					</div>
+							<a
+								class="wp-block-button__link has-primary-background-color has-background has-sm-font-size wp-element-button"
+								href="<?php echo esc_url($button_primary_url); ?>"
+								style="border-radius:4px"
+							>
+								<?php echo esc_html($button_primary_text); ?>
+							</a>
 
-					<div class="wp-block-button">
+						</div>
+					<?php endif; ?>
 
-						<a
-							class="wp-block-button__link has-black-color has-accent-background-color has-background has-sm-font-size wp-element-button"
-							href="#warranty-repairs"
-							style="border-radius:4px"
-						>
-							Warranty Repairs
-						</a>
+					<?php if ( $button_secondary_text && $button_secondary_url ) : ?>
+						<div class="wp-block-button">
 
-					</div>
+							<a
+								class="wp-block-button__link has-black-color has-accent-background-color has-background has-sm-font-size wp-element-button"
+								href="<?php echo esc_url($button_secondary_url); ?>"
+								style="border-radius:4px"
+							>
+								<?php echo esc_html($button_secondary_text); ?>
+							</a>
+
+						</div>
+					<?php endif; ?>
 
 				</div>
 

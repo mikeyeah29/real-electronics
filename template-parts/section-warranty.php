@@ -1,62 +1,66 @@
 <?php
-$icon_left = $args['icon_left'] ?? 'shield';
-$icon_right = $args['icon_right'] ?? 'spanner';
-$paragraph_left = $args['paragraph_left'] ?? 'If your Pioneer equipment is still under warranty, we carry out authorised warranty repairs in line with manufacturer guidelines. We assess the equipment, carry out approved repairs, and complete all required testing.';
-$paragraph_right = $args['paragraph_right'] ?? 'For equipment outside of warranty, we offer professional non-warranty repairs with clear advice and transparent pricing. Where possible, we use manufacturer-approved parts and follow the same careful repair process.';
+
+$paragraph_left = $args['paragraph_left'] ?? 'Update in settings';
+$paragraph_right = $args['paragraph_right'] ?? 'Update in settings';
+
+// $is_authorised = $args['is_authorised'] ?? false;
+
+$options = get_option('real_electronics_manufacturer_settings') ?: [];
+
+// if ($is_authorised) {
+
+$icon_left = 'shield';
+$icon_right = 'spanner';
+
+$heading_left  = 'Warranty Repairs';
+$heading_right = 'Non-Warranty Repairs';
+
+$paragraph_left  = $options['authorised_warranty_repairs'] ?? '';
+$paragraph_right = $options['authorised_non_warranty_repairs'] ?? '';
+
+// } else {
+
+//     $icon_left = 'spanner';
+//     $icon_right = 'info';
+
+// 	$heading_left  = 'Non-Warranty Repairs';
+// 	$heading_right = 'Warranty Information';
+
+// 	$paragraph_left  = $options['non_authorised_non_warranty_repairs'] ?? '';
+// 	$paragraph_right = $options['non_authorised_warranty_information'] ?? '';
+
+// }
+
 ?>
 
-<!-- wp:group {"className":"warranty-repairs ","style":{"elements":{"link":{"color":{"text":"var:preset|color|black"}}}},"backgroundColor":"white","textColor":"black","layout":{"type":"constrained"}} -->
-<div class="wp-block-group warranty-repairs has-black-color has-white-background-color has-text-color has-background has-link-color">
-    <!-- wp:heading {"textAlign":"center","fontSize":"xl"} -->
-    <h2 class="wp-block-heading has-text-align-center has-xl-font-size">Warranty &amp; Non-Warranty Repairs</h2>
-    <!-- /wp:heading -->
+<div class="container">
+    <div class="wp-block-group pt-lg pb-lg warranty-repairs has-black-color has-white-background-color has-text-color has-background has-link-color is-layout-constrained wp-block-group-is-layout-constrained">
+        <h2 class="wp-block-heading has-text-align-center has-xl-font-size">Warranty &amp; Non-Warranty Repairs</h2>
 
-    <!-- wp:columns {"style":{"spacing":{"padding":{"bottom":"var:preset|spacing|sm"}}}} -->
-    <div class="wp-block-columns" style="padding-bottom:var(--wp--preset--spacing--sm)">
-        <!-- wp:column -->
-        <div class="wp-block-column">
-            <!-- wp:group {"className":"b-light-orange","style":{"spacing":{"padding":{"top":"var:preset|spacing|md","bottom":"var:preset|spacing|md","left":"var:preset|spacing|md","right":"var:preset|spacing|md"}},"elements":{"link":{"color":{"text":"var:preset|color|black"}}},"border":{"radius":{"topLeft":"4px","topRight":"4px","bottomLeft":"4px","bottomRight":"4px"}}},"textColor":"black","layout":{"type":"constrained"}} -->
-            <div class="wp-block-group b-light-orange has-black-color has-text-color has-link-color" style="border-top-left-radius:4px;border-top-right-radius:4px;border-bottom-left-radius:4px;border-bottom-right-radius:4px;padding-top:var(--wp--preset--spacing--md);padding-right:var(--wp--preset--spacing--md);padding-bottom:var(--wp--preset--spacing--md);padding-left:var(--wp--preset--spacing--md)">
-                <!-- wp:shortcode -->
-                [svg_icon name="<?php echo esc_attr( $icon_left ); ?>"]
-                <!-- /wp:shortcode -->
+        <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-3be69f59 wp-block-columns-is-layout-flex" style="padding-bottom:var(--wp--preset--spacing--sm)">
+            <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+                <div class="wp-block-group b-light-orange br-sm has-black-color has-text-color has-link-color is-layout-constrained wp-block-group-is-layout-constrained p-md">
+                    
+                    <?php echo do_shortcode('[svg_icon name="' . $icon_left . '"]'); ?>
 
-                <!-- wp:heading {"level":3,"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"secondary","fontSize":"lg"} -->
-                <h3 class="wp-block-heading has-secondary-color has-text-color has-link-color has-lg-font-size" style="margin-top:0;margin-bottom:0">Warranty Repairs</h3>
-                <!-- /wp:heading -->
+                    <h3 class="wp-block-heading has-secondary-color has-text-color has-link-color has-lg-font-size mt-0 mb-0"><?php echo $heading_left; ?></h3>
 
-                <!-- wp:paragraph -->
-                <p><?php echo esc_html( $paragraph_left ); ?></p>
-                <!-- /wp:paragraph -->
+                    <p><?php echo wpautop( esc_html( $paragraph_left ) ); ?></p>
+                </div>
             </div>
-            <!-- /wp:group -->
-        </div>
-        <!-- /wp:column -->
 
-        <!-- wp:column -->
-        <div class="wp-block-column">
-            <!-- wp:group {"className":"b-light-orange","style":{"spacing":{"padding":{"top":"var:preset|spacing|md","bottom":"var:preset|spacing|md","left":"var:preset|spacing|md","right":"var:preset|spacing|md"}},"elements":{"link":{"color":{"text":"var:preset|color|black"}}},"border":{"radius":{"topLeft":"4px","topRight":"4px","bottomLeft":"4px","bottomRight":"4px"}}},"backgroundColor":"white","textColor":"black","layout":{"type":"constrained"}} -->
-            <div class="wp-block-group b-light-orange has-black-color has-white-background-color has-text-color has-background has-link-color" style="border-top-left-radius:4px;border-top-right-radius:4px;border-bottom-left-radius:4px;border-bottom-right-radius:4px;padding-top:var(--wp--preset--spacing--md);padding-right:var(--wp--preset--spacing--md);padding-bottom:var(--wp--preset--spacing--md);padding-left:var(--wp--preset--spacing--md)">
-                <!-- wp:shortcode -->
-                [svg_icon name="<?php echo esc_attr( $icon_right ); ?>"]
-                <!-- /wp:shortcode -->
+            <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+                <div class="wp-block-group b-light-orange br-sm has-black-color has-white-background-color has-text-color has-background has-link-color is-layout-constrained wp-block-group-is-layout-constrained p-md">
+                    
+                    <?php echo do_shortcode('[svg_icon name="' . $icon_right . '"]'); ?>
 
-                <!-- wp:heading {"level":3,"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}},"spacing":{"margin":{"top":"0","bottom":"0"}}},"textColor":"secondary","fontSize":"lg"} -->
-                <h3 class="wp-block-heading has-secondary-color has-text-color has-link-color has-lg-font-size" style="margin-top:0;margin-bottom:0">Non-Warranty Repairs</h3>
-                <!-- /wp:heading -->
+                    <h3 class="wp-block-heading has-secondary-color has-text-color has-link-color has-lg-font-size mt-0 mb-0"><?php echo $heading_right; ?></h3>
 
-                <!-- wp:paragraph -->
-                <p><?php echo esc_html( $paragraph_right ); ?></p>
-                <!-- /wp:paragraph -->
+                    <p><?php echo wpautop( esc_html( $paragraph_right ) ); ?></p>
+                </div>
             </div>
-            <!-- /wp:group -->
         </div>
-        <!-- /wp:column -->
+
+        <p class="has-text-align-center has-sm-font-size"><em>If you’re unsure whether your equipment is covered by warranty, </em><br><em>just get in touch and we’ll be happy to advise. </em></p>
     </div>
-    <!-- /wp:columns -->
-
-    <!-- wp:paragraph {"align":"center","fontSize":"sm"} -->
-    <p class="has-text-align-center has-sm-font-size"><em>If you’re unsure whether your equipment is covered by warranty, </em><br><em>just get in touch and we’ll be happy to advise. </em></p>
-    <!-- /wp:paragraph -->
 </div>
-<!-- /wp:group -->

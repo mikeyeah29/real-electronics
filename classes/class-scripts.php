@@ -12,6 +12,8 @@ class Scripts {
 		
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend_assets' ) );
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_editor_assets' ) );
+		add_action('admin_enqueue_scripts', [ $this, 'enqueue_admin_styles' ]);
+		add_action('admin_enqueue_scripts', [ $this, 'enqueue_admin_scripts' ]);
 
 		add_action( 'enqueue_block_assets', function() {
 			$css_path = get_theme_file_path( 'build/style-index.css' );
@@ -48,6 +50,17 @@ class Scripts {
 		if ( file_exists($asset_file) && file_exists($js_path) ) {
 			$asset = include $asset_file;
 			wp_enqueue_script('rwd-frontend', get_theme_file_uri('build/index.js'), $asset['dependencies'], $asset['version'], true);
+		}
+
+		$accordion_js_path = get_theme_file_path( 'assets/js/accordion-fallback.js' );
+		if ( file_exists( $accordion_js_path ) ) {
+			wp_enqueue_script(
+				'real-electronics-accordion-fallback',
+				get_theme_file_uri( 'assets/js/accordion-fallback.js' ),
+				[],
+				filemtime( $accordion_js_path ),
+				true
+			);
 		}
 
 	}
@@ -106,4 +119,75 @@ class Scripts {
             );
         }
     }
+
+	public function enqueue_admin_styles(): void {
+
+		$screen = get_current_screen();
+
+		if ($screen->id !== 'settings_page_real-electronics-manufacturers') {
+			return;
+		}
+
+		wp_enqueue_style(
+			'real-electronics-settings',
+			get_template_directory_uri() . '/assets/admin/settings.css',
+			[],
+			'1.0'
+		);
+
+	}
+
+	public function enqueue_admin_scripts(string $hook): void {
+
+		if ($hook !== 'settings_page_real-electronics-manufacturers') {
+			return;
+		}
+
+		wp_enqueue_media();
+
+		wp_add_inline_script('jquery-core', <<<'JS'
+		(function($){
+
+			function refreshPreview($wrap, attachment){
+				var url = (attachment && attachment.sizes && attachment.sizes.medium) ? attachment.sizes.medium.url : attachment.url;
+				$wrap.find('.re-media-field__preview').html(
+					'<img src="' + url + '" style="max-width:240px;height:auto;border:1px solid #dcdcde;border-radius:4px;" />'
+				);
+			}
+
+			$(document).on('click', '.re-media-field__select', function(e){
+				e.preventDefault();
+
+				var $wrap = $(this).closest('.re-media-field');
+				var $input = $wrap.find('.re-media-field__input');
+
+				var frame = wp.media({
+					title: 'Select CTA Image',
+					button: { text: 'Use this image' },
+					multiple: false
+				});
+
+				frame.on('select', function(){
+					var attachment = frame.state().get('selection').first().toJSON();
+					$input.val(attachment.id);
+					refreshPreview($wrap, attachment);
+				});
+
+				frame.open();
+			});
+
+			$(document).on('click', '.re-media-field__remove', function(e){
+				e.preventDefault();
+
+				var $wrap = $(this).closest('.re-media-field');
+				$wrap.find('.re-media-field__input').val('');
+				$wrap.find('.re-media-field__preview').html(
+					'<div style="width:240px;max-width:100%;padding:18px;border:1px dashed #c3c4c7;border-radius:4px;color:#646970;">No image selected</div>'
+				);
+			});
+
+		})(jQuery);
+		JS, 'after');
+
+	}
 }

@@ -1,0 +1,18 @@
+/* Scope to this settings page */
+
+.settings_page_real-electronics-manufacturers h2 {
+
+    margin-top: 40px;
+    margin-bottom: 12px;
+
+    padding: 16px 20px;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    background: #f6f7f7;
+
+    border-left: 4px solid #2271b1;
+    border-radius: 3px;
+
+}

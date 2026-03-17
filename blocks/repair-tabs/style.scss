@@ -147,6 +147,15 @@
         display: none;
         padding: var(--wp--preset--spacing--md);
         color: var(--wp--preset--color--black);
+        h2.wp-block-heading {
+            font-size: var(--wp--preset--font-size--lg);
+        }
+        h3.wp-block-heading {
+            margin-bottom: var(--wp--preset--spacing--sm);
+        }
+        ul {
+            font-size: var(--wp--preset--font-size--sm);
+        }
     }
 
     &__panel.is-active {

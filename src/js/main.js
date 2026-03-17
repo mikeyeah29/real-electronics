@@ -123,3 +123,59 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 })
+
+/* Gutenberg Accordion
+=============================================*/
+
+document.querySelectorAll('.wp-block-accordion-item').forEach((item) => {
+
+    const panel = item.querySelector('.wp-block-accordion-panel');
+    if (!panel) return;
+
+    // Initial state
+    if (item.classList.contains('is-open')) {
+        panel.style.height = 'auto';
+    } else {
+        panel.style.height = '0px';
+    }
+
+    const observer = new MutationObserver(() => {
+
+        const isOpen = item.classList.contains('is-open');
+
+        if (isOpen) {
+
+            // OPEN
+            panel.style.height = '0px';
+
+            requestAnimationFrame(() => {
+                panel.style.height = panel.scrollHeight + 'px';
+            });
+
+            panel.addEventListener('transitionend', function handler() {
+                if (item.classList.contains('is-open')) {
+                    panel.style.height = 'auto';
+                }
+                panel.removeEventListener('transitionend', handler);
+            });
+
+        } else {
+
+            // CLOSE
+
+            // convert auto → pixel height
+            panel.style.height = panel.scrollHeight + 'px';
+
+            requestAnimationFrame(() => {
+                panel.style.height = '0px';
+            });
+        }
+
+    });
+
+    observer.observe(item, {
+        attributes: true,
+        attributeFilter: ['class']
+    });
+
+});

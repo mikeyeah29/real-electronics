@@ -8,13 +8,13 @@ $suffix = $suffix === 'light' ? '-light' : '';
 
 <ul class="site-header__social ul-reset d-flex align-items-center gap-16">
     <li>
-        <a href="#">
+        <a href="https://www.facebook.com/RealElectronics">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/social/facebook<?php echo $suffix; ?>.png" alt="Facebook Icon" />
         </a>
     </li>
-    <li>
+    <!-- <li>
         <a href="#">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/social/x<?php echo $suffix; ?>.png" alt="X Icon" />
+            <img src="<?php // echo get_template_directory_uri(); ?>/assets/images/social/x<?php // echo $suffix; ?>.png" alt="X Icon" />
         </a>
-    </li>
+    </li> -->
 </ul>

@@ -28,6 +28,16 @@ class ManufacturerFields {
 					'preview_size' => 'medium',
 					'library' => 'all',
 				],
+                [
+					'key' => 'field_manufacturer_logo_alt',
+					'label' => 'Manufacturer Logo Alt',
+					'name' => 'manufacturer_logo_alt',
+					'type' => 'image',
+                    'instructions' => 'If set, this image will be used on the slider',
+					'return_format' => 'array',
+					'preview_size' => 'medium',
+					'library' => 'all',
+				],
 
 			],
 

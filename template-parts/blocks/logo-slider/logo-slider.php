@@ -31,6 +31,7 @@
 				<div class="blaze-track">
 
 					<?php
+
 					$manufacturers = new WP_Query([
 						'post_type'      => 'manufacturer',
 						'posts_per_page' => -1,
@@ -42,11 +43,11 @@
 					if ($manufacturers->have_posts()) :
 						while ($manufacturers->have_posts()) : $manufacturers->the_post();
 
-							if (has_post_thumbnail()) :
-								$logo_url = get_the_post_thumbnail_url(get_the_ID(), 'medium');
-								$alt      = get_the_title();
+							$manufacturer = new \RealElectronics\Models\Manufacturer(get_the_ID());
+							$logo = $manufacturer->getLogo();
+							if ($logo) :
 								?>
-								<img src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr($alt); ?>">
+								<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
 								<?php
 							endif;
 
@@ -61,11 +62,11 @@
 						$manufacturers->rewind_posts();
 						while ($manufacturers->have_posts()) : $manufacturers->the_post();
 
-							if (has_post_thumbnail()) :
-								$logo_url = get_the_post_thumbnail_url(get_the_ID(), 'medium');
-								$alt      = get_the_title();
+							$manufacturer = new \RealElectronics\Models\Manufacturer(get_the_ID());
+							$logo = $manufacturer->getLogo();
+							if ($logo) :
 								?>
-								<img src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr($alt); ?>">
+								<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
 								<?php
 							endif;
 

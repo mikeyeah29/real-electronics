@@ -17,6 +17,8 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<?php $contact_details = re_get_contact_details(); ?>
+
 <header class="site-header">
 	<div class="site-header__inner">
 
@@ -51,7 +53,7 @@
 		</button>
 
 		<div class="d-none d-md-block ml-auto">
-			<?php get_template_part('template-parts/header/contact'); ?>
+			<?php get_template_part('template-parts/header/contact', null, array('contact_details' => $contact_details)); ?>
 		</div>
 		
 		<div class="d-none d-md-block pl-sm">

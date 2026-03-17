@@ -11,7 +11,7 @@ $image_alt = $args['image_alt'] ?? $title;
                     
     <div class="w-md-66">
 
-        <h3 class="has-lg-font-size pb-sm"><?php echo esc_html($title); ?></h3>
+        <!-- <h3 class="has-lg-font-size pb-sm"><?php // echo esc_html($title); ?></h3> -->
 
         <?php if (!empty($content_html)) : ?>
             <?php echo $content_html; ?>

@@ -19,7 +19,8 @@ class Menus {
 			array(
 				'primary'   => __( 'Primary Menu', 'real-electronics' ),
 				'secondary' => __( 'Secondary Menu', 'real-electronics' ),
-				'footer'    => __( 'Footer Menu', 'real-electronics' ),
+				'footer-1'  => __( 'Footer Menu 1', 'real-electronics' ),
+				'footer-2'  => __( 'Footer Menu 2', 'real-electronics' ),
 			)
 		);
 	}
