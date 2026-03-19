@@ -50,8 +50,11 @@ new \RealElectronics\Theme\BlockSetup();
 
 require_once get_template_directory() . '/classes/shortcodes/class-svg-icon.php';
 require_once get_template_directory() . '/classes/shortcodes/class-socials.php';
+require_once get_template_directory() . '/classes/shortcodes/class-process-stacked.php';
 new \RealElectronics\Shortcodes\SvgIcon();
 new \RealElectronics\Shortcodes\Socials();
+new \RealElectronics\Shortcodes\ProcessStacked();
+
 /*
 ===============================================
 	Register Custom Post Types
@@ -80,6 +83,10 @@ $manufacturers_meta = new \RealElectronics\Theme\SimpleMetaBoxes('manufacturer',
 ]);
 
 $repair_services_meta = new \RealElectronics\Theme\SimpleMetaBoxes('repair_service', 'Repair Service Meta', [
+    'repair_tab_show' => [
+        'label' => 'Show in Tabs?',
+        'type' => 'checkbox'
+    ],
     'repair_tab_icon' => [
         'label' => 'Tab Icon',
         'type' => 'select',
@@ -115,10 +122,16 @@ $repair_services_meta = new \RealElectronics\Theme\SimpleMetaBoxes('repair_servi
 require_once get_template_directory() . '/classes/acf/class-manufacturer-fields.php';
 new \RealElectronics\ACF\ManufacturerFields();
 
+require_once get_template_directory() . '/classes/acf/class-call-to-action.php';
+new \RealElectronics\ACF\CallToActionFields();
+
 // Options Pages
 
 require_once get_template_directory() . '/classes/settings/class-settings-manufacturer.php';
 new \RealElectronics\Settings\ManufacturerSettings();
+
+require_once get_template_directory() . '/classes/settings/class-settings-global.php';
+new \RealElectronics\Settings\GlobalSettings();
 
 /*
 ===============================================
@@ -127,6 +140,7 @@ new \RealElectronics\Settings\ManufacturerSettings();
 */
 
 require_once get_template_directory() . '/classes/models/class-model-manufacturer.php';
+require_once get_template_directory() . '/classes/models/class-model-repair-service.php';
 
 /*
 ===============================================
@@ -166,17 +180,24 @@ function populate_manufacturer_dropdown($tag, $unused) {
     $manufacturers = get_posts($args);
 
     // Build options array
-    $options = array();
+    $option_values = array();
+    $option_labels = array();
     foreach ($manufacturers as $manu) {
-        $options[] = $manu->post_title;
+        $option_values[] = $manu->post_title;
+        $option_labels[] = $manu->post_title;
     }
 
+    $option_values[] = 'Other';
+    $option_labels[] = 'Other';
+
     // Add a blank first option
-    array_unshift($options, '');
+    array_unshift($option_values, '');
+    array_unshift($option_labels, '- select a manufacturer -');
 
     // Replace tag options
-    $tag['raw_values'] = $options;
-    $tag['values'] = $options;
+    $tag['raw_values'] = $option_values;
+    $tag['values'] = $option_values;
+    $tag['labels'] = $option_labels;
 
     return $tag;
 }
@@ -191,34 +212,13 @@ function populate_manufacturer_dropdown($tag, $unused) {
 require_once get_template_directory() . '/classes/class-debugging.php';
 new \RealElectronics\Debugging\Debugging(true);
 
-add_shortcode( 'svg_icon', function ( $atts ) {
-
-	$atts = shortcode_atts(
-		[
-			'name' => '',
-		],
-		$atts
-	);
-
-	if ( empty( $atts['name'] ) ) {
-		return '';
-	}
-
-	ob_start();
-	?>
-	<span class="enigma-svg-icon">
-		<?php get_template_part( 'template-parts/svg/' . esc_attr( $atts['name'] ) ); ?>
-	</span>
-	<?php
-
-	return ob_get_clean();
-} );
 
 function re_get_contact_details() {
 
     return [
         'address' => 'Dannemora Dr, Sheffield S9 5DF',
         'address_link' => 'https://www.google.com/maps/dir/50.7315048,-1.8056281/Dannemora+Dr,+Sheffield+S9+5DF/@53.3963956,-1.4122319,50m/data=!3m1!1e3!4m9!4m8!1m1!4e1!1m5!1m1!1s0x487977f1e1d8d799:0xa7d74cfde2cbaed4!2m2!1d-1.4124559!2d53.3974775?entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D',
+        'address_w3w' => 'sake.form.watch',
         'phone' => '0114 244 2969',
         'email' => 'enquiries@realelectronics.co.uk',
         'facebook' => 'https://www.facebook.com/RealElectronics',

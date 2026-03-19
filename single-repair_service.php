@@ -1,8 +1,14 @@
-<?php get_header(); ?>
+<?php 
+
+// require_once get_template_directory() . '/classes/class-options.php';
+
+get_header(); ?>
 
 <?php 
 
 $image = get_the_post_thumbnail_url();
+
+$repair_service = new \RealElectronics\Models\RepairService(get_the_ID());
 
 ?>
 
@@ -35,8 +41,20 @@ $image = get_the_post_thumbnail_url();
 </div>
 <!-- /wp:cover -->
 
-<div class="container" style="margin-bottom: 80px; margin-top: 80px;">
+<div class="container pt-lg pb-lg page-start-after-hero">
     <?php the_content(); ?>
 </div>
+
+<?php 
+	
+	$cta_args = $repair_service->getCallToAction();
+
+	get_template_part('template-parts/section-cta', null, [
+		'image' => $cta_args['image'],
+		'heading' => $cta_args['heading'],
+		'description' => $cta_args['description'],
+	]); 
+
+?>
 
 <?php get_footer(); ?>

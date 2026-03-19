@@ -41,3 +41,12 @@ details {
     text-decoration: underline !important;
   }
 }
+
+.image-stretch {
+  object-fit: cover;
+  height: 100%;
+  img {
+    object-fit: cover;
+    height: 100%;
+  }
+}

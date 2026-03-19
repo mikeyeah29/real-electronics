@@ -124,7 +124,7 @@ class Scripts {
 
 		$screen = get_current_screen();
 
-		if ($screen->id !== 'settings_page_real-electronics-manufacturers') {
+		if (!in_array($screen->id, [ 'settings_page_real-electronics-manufacturers', 'settings_page_real-electronics-global' ], true)) {
 			return;
 		}
 
@@ -139,7 +139,7 @@ class Scripts {
 
 	public function enqueue_admin_scripts(string $hook): void {
 
-		if ($hook !== 'settings_page_real-electronics-manufacturers') {
+		if (!in_array($hook, [ 'settings_page_real-electronics-manufacturers', 'settings_page_real-electronics-global' ], true)) {
 			return;
 		}
 

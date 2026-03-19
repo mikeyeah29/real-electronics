@@ -2,7 +2,20 @@
 
 $manufacturer_name = $args['manufacturer_name'] ?? 'Pioneer';
 
-$options = get_option('real_electronics_manufacturer_settings') ?: [];
+$options = get_option('real_electronics_global_settings') ?: [];
+
+if (
+	empty($options['repair_step_1_heading']) &&
+	empty($options['repair_step_1_text']) &&
+	empty($options['repair_step_2_heading']) &&
+	empty($options['repair_step_2_text']) &&
+	empty($options['repair_step_3_heading']) &&
+	empty($options['repair_step_3_text']) &&
+	empty($options['repair_step_4_heading']) &&
+	empty($options['repair_step_4_text'])
+) {
+	$options = get_option('real_electronics_manufacturer_settings') ?: [];
+}
 
 $steps = [
 	[
@@ -18,12 +31,12 @@ $steps = [
 	[
 		'heading' => $options['repair_step_3_heading'] ?? '',
 		'text'    => $options['repair_step_3_text'] ?? '',
-		'icon'    => 'spanner',
+		'icon'    => 'badge-tick',
 	],
 	[
 		'heading' => $options['repair_step_4_heading'] ?? '',
 		'text'    => $options['repair_step_4_text'] ?? '',
-		'icon'    => 'package',
+		'icon'    => 'spanner',
 	],
 ];
 

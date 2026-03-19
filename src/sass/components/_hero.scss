@@ -6,6 +6,12 @@
         margin: 2rem 0px;
     }
 
+    &.is-small {
+        height: auto;
+        min-height: 500px;
+        padding: 48px var(--wp--style--block-gap);
+    }
+
     // .wp-block-cover__image-background,
     // .wp-block-cover__video-background {
     //     transform: scale(var(--hero-scale));

@@ -3,6 +3,13 @@ $repair_services = get_posts([
     'post_type' => 'repair_service',
     'post_status' => 'publish',
     'posts_per_page' => -1,
+    'meta_query' => [
+        [
+            'key' => 'repair_tab_show',
+            'value' => '1',
+            'compare' => '=',
+        ],
+    ],
     'orderby' => [
         'menu_order' => 'ASC',
         'date' => 'ASC',

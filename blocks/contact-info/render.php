@@ -22,6 +22,8 @@ if (
 	return;
 }
 
+$contact_details = re_get_contact_details();
+
 $wrapper_attributes = get_block_wrapper_attributes( [
 	'class' => 'contact-info',
 ] );
@@ -68,9 +70,16 @@ if ( $attributes['hours'] ) {
 					</h3>	
 				</div>
 				<div class="contact-info__item contact-info__item--address">
-					<a href="https://www.google.com/maps/dir/?api=1&destination=Dannemora+Dr,+Sheffield+S9+5DF" target="_blank">
+					<a href="<?php echo $contact_details['address_link']; ?>" target="_blank">
 						<span class="contact-info__item-text">
 							<?php echo wp_kses_post( $attributes['address'] ); ?>
+						</span>
+					</a>
+				</div>
+				<div class="contact-info__item contact-info__item--address">
+					<a href="https://w3w.co/<?php echo $contact_details['address_w3w']; ?>" target="_blank">
+						<span class="contact-info__item-text">
+							<?php _e('View on What3Words', 'real-electronics'); ?>
 						</span>
 					</a>
 				</div>

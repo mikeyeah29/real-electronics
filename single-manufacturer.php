@@ -1,6 +1,6 @@
 <?php 
 
-require_once get_template_directory() . '/classes/class-options.php';
+// require_once get_template_directory() . '/classes/class-options.php';
 
 get_header(); 
 
@@ -109,8 +109,9 @@ get_header();
             </div>
 		</div>
 
-        <?php get_template_part('template-parts/section-process'); ?>
-
+        <?php get_template_part('template-parts/section-process', null, [
+            'manufacturer_name' => get_the_title(),
+        ]); ?>
 
         <?php
 
@@ -151,8 +152,13 @@ get_header();
 
         <?php 
         
-            $cta_args = \RealElectronics\Theme\Options::get_cta_args(get_the_title());
-            get_template_part('template-parts/section-cta', null, $cta_args); 
+            $cta_args = $manufacturer->getCallToAction();
+
+            get_template_part('template-parts/section-cta', null, [
+                'image' => $cta_args['image'],
+                'heading' => $cta_args['heading'],
+                'description' => $cta_args['description'],
+            ]); 
         
         ?>
 

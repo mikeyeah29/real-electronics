@@ -1,6 +1,7 @@
 /* Scope to this settings page */
 
-.settings_page_real-electronics-manufacturers h2 {
+.settings_page_real-electronics-manufacturers h2,
+.settings_page_real-electronics-global h2 {
 
     margin-top: 40px;
     margin-bottom: 12px;

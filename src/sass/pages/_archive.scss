@@ -64,6 +64,12 @@
 
 .archive-card__image {
     margin-bottom: 1.25rem;
-    aspect-ratio: 16 / 9;
-    margin-bottom: 1.25rem;
+    img {
+        aspect-ratio: 16 / 11;
+        object-fit: cover;
+    }
+}
+
+.archive-grid {
+    margin: 0px clamp(-1.5rem, 1vw, -1rem);
 }
