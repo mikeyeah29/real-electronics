@@ -28,6 +28,14 @@
     background: var(--wp--preset--color--black);
     color: var(--wp--preset--color--white);
     padding: var(--wp--preset--spacing--md) 0px;
+    @media (max-width: 768px) {
+        text-align: center;
+    }
+    img {
+        @media (max-width: 768px) {
+            margin: 16px auto 0px auto;
+        }
+    }
 }
 
 .footer-menu a {

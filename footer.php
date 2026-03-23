@@ -12,7 +12,7 @@
 
 	<div class="footer-banner">
 		<div class="container container--wide">
-			<div class="d-flex align-items-center justify-content-center gap-16">
+			<div class="d-md-flex align-items-center justify-content-center gap-16">
 				<p class="has-lg-font-size mb-0 txt-600 has-rajdhani-font-family">Official Authorized Pioneer DJ Service center</p>
 				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/pioneer.png" alt="Pioneer Logo" style="width: 200px; height: auto;" />
 			</div>
@@ -39,7 +39,7 @@
 					</div>
 				</div> -->
 
-				<div class="w-md-33 mb-1 mb-md-0">
+				<div class="w-md-33 mb-md mb-md-0">
 					<nav class="footer-nav">
 						<h4>Repairs</h4>
 						<!-- <ul class="ul-reset has-sm-font-size pt-sm">
@@ -60,7 +60,7 @@
 					</nav>
 				</div>
 
-				<div class="w-md-33 mb-1 mb-md-0">
+				<div class="w-md-33 mb-md mb-md-0">
 					<nav class="footer-nav">
 						<h4>Company</h4>
 						<?php wp_nav_menu(
@@ -80,7 +80,7 @@
 					</nav>
 				</div>
 
-				<div class="w-md-33 mb-1 mb-md-0">
+				<div class="w-md-33 mb-md mb-md-0">
 					<div class="footer-contact">
 						<h4>Contact</h4>
 						<ul class="ul-reset has-sm-font-size pt-sm">

@@ -25,3 +25,13 @@
     .align-items-md-stretch { align-items: stretch !important; }
     .flex-wrap-md { flex-wrap: wrap !important; }
 }
+
+@media (min-width: 1120px) {
+    .d-lg-flex { display: flex !important; }
+    .justify-content-lg-center { justify-content: center; }
+    .justify-content-lg-between { justify-content: space-between; }
+    .align-items-lg-center { align-items: center !important; }
+    .align-items-lg-end { align-items: flex-end !important; }
+    .align-items-lg-stretch { align-items: stretch !important; }
+    .flex-wrap-lg { flex-wrap: wrap !important; }
+}

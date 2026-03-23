@@ -51,3 +51,15 @@
 //         cursor: pointer;
 //     }
 // }
+
+.wp-block-spacer {
+    @media (max-width: 768px) {
+        height: 80px !important;
+    }
+}
+
+// .wp-block-image {
+//     @media (max-width: 768px) {
+//         max-width: 500px !important;
+//     }
+// }

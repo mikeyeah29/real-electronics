@@ -13,6 +13,13 @@
     }
 }
 
+// :root :where(.is-layout-constrained)> :last-child {
+//     @media (max-width: 780px) {
+//         max-width: 500px;
+//         margin: 0px auto;
+//     }
+// }
+
 .gap-2 { gap: 2px; }
 .gap-4 { gap: 4px; }
 

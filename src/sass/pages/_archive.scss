@@ -8,6 +8,9 @@
     color: var(--wp--preset--color--white);
     margin-top: 132px;
     font-weight: 600 !important;
+    @media (max-width: 768px) {
+        margin-top: 80px;
+    }
 }
 
 .archive-card {

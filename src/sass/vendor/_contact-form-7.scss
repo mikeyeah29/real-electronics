@@ -8,6 +8,13 @@
         font-weight: 500;
         font-size: 14px;
     }
+    p {
+        margin-bottom: 16px !important;
+    }
+    .d-flex > p,
+    .d-md-flex > p {
+        flex: 1;
+    }
 }
 
 /* Wrapper label */
@@ -95,10 +102,21 @@ label {
     }
 }
 
+.h-captcha {
+    @media (max-width: 1120px) {
+        text-align: center;
+    }
+}
+
 .submit-btn-wrapper {
     & > p {
         display: flex;
         flex-direction: row-reverse;
+        @media (max-width: 1120px) {
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
     }
 }
 

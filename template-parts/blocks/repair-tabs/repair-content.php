@@ -7,7 +7,7 @@ $image_url = $args['image_url'] ?? '';
 $image_alt = $args['image_alt'] ?? $title;
 ?>
 
-<div class="d-flex gap-32">
+<div class="d-md-flex gap-32">
                     
     <div class="w-md-66">
 
@@ -24,7 +24,7 @@ $image_alt = $args['image_alt'] ?? $title;
         <?php endif; ?>
 
     </div>
-    <div class="w-md-33">
+    <div class="d-none d-md-block w-md-33">
         <?php if (!empty($image_url)) : ?>
             <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" class="square">
         <?php else : ?>
