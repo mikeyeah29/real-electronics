@@ -29,7 +29,8 @@ class Manufacturer {
     }
 
     public function getHeroLogo(): ?array {
-        return get_field('manufacturer_logo', $this->post_id);
+        $hero_logo = get_field('manufacturer_logo', $this->post_id);
+        return $hero_logo ? $hero_logo : [];
     }
 
     public function getHeroLogoWidth(): ?int {
@@ -84,6 +85,41 @@ class Manufacturer {
         $article = in_array($firstLetter, $vowels, true) ? 'an' : 'a';
 
         return "Book {$article} {$title} repair";
+    }
+
+    public function getServicingItems(): array {
+
+        $items = get_post_meta($this->post_id, 'servicing_items', true);
+
+        if (!is_array($items)) {
+            return [];
+        }
+
+        $sanitized_items = [];
+
+        foreach ($items as $item) {
+            if (!is_array($item)) {
+                continue;
+            }
+
+            $title = sanitize_text_field($item['title'] ?? '');
+            $subtitle = sanitize_text_field($item['subtitle'] ?? '');
+            $image_id = absint($item['image_id'] ?? 0);
+            $link = esc_url_raw($item['link'] ?? '');
+
+            if (!$title && !$image_id && !$link) {
+                continue;
+            }
+
+            $sanitized_items[] = [
+                'title' => $title,
+                'subtitle' => $subtitle,
+                'image_id' => $image_id,
+                'link' => $link,
+            ];
+        }
+
+        return $sanitized_items;
     }
 
     public function getCallToAction(): ?array {

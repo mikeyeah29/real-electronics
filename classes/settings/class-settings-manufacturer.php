@@ -9,6 +9,7 @@ class ManufacturerSettings {
 	public function __construct() {
 		add_action('admin_menu', [ $this, 'add_menu_page' ]);
 		add_action('admin_init', [ $this, 'register_settings' ]);
+		add_filter('option_page_capability_real_electronics_manufacturer_group', [ $this, 'get_required_capability' ]);
 	}
 
 	/**
@@ -16,13 +17,20 @@ class ManufacturerSettings {
 	 */
 	public function add_menu_page(): void {
 
-		add_options_page(
+		add_submenu_page(
+			'edit.php?post_type=manufacturer',
 			'Manufacturer Settings',
-			'Manufacturers',
+			'Settings',
 			'edit_pages',
 			'real-electronics-manufacturers',
 			[ $this, 'render_settings_page' ]
 		);
+
+	}
+
+	public function get_required_capability(): string {
+
+		return 'edit_pages';
 
 	}
 

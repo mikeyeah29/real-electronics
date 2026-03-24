@@ -3,8 +3,16 @@
 get_header();
 
 $manufacturer_options = get_option('real_electronics_manufacturer_settings') ?: [];
-$other_manufacturers = preg_split('/\r\n|\r|\n/', $manufacturer_options['other_manufacturers'] ?? '');
-$other_manufacturers = array_values(array_filter(array_map('trim', $other_manufacturers ?: [])));
+$other_manufacturers = $manufacturer_options['other_manufacturers'] ?? [];
+// $other_manufacturers = preg_split('/\r\n|\r|\n/', $manufacturer_options['other_manufacturers'] ?? '');
+// $other_manufacturers = array_values(array_filter(array_map('trim', $other_manufacturers ?: [])));
+
+global $wp_query;
+
+if ( ! empty( $wp_query->posts ) ) {
+	$wp_query->posts = array_reverse( $wp_query->posts );
+	rewind_posts();
+}
 ?>
 
 <main id="primary" class="site-main archive">
@@ -82,12 +90,13 @@ $other_manufacturers = array_values(array_filter(array_map('trim', $other_manufa
 
 		<h2 class="hdln-2 text-center mt-lg">Other Manufacturers We Repair</h2>
 
-		<div class="archive-manufacturers-other">
-			<ul class="cols-2 cols-md-3 cols-lg-4 ul-reset">
-				<?php foreach ( $other_manufacturers as $other_manufacturer ) : ?>
-					<li><?php echo esc_html($other_manufacturer); ?></li>
-				<?php endforeach; ?>
-			</ul>
+		<div class="archive-manufacturers-other text-center">
+			<p><?php echo esc_html($other_manufacturers); ?></p>
+			<!-- <ul class="cols-2 cols-md-3 cols-lg-4 ul-reset">
+				<?php // foreach ( $other_manufacturers as $other_manufacturer ) : ?>
+					<li><?php // echo esc_html($other_manufacturer); ?></li>
+				<?php //endforeach; ?>
+			</ul> -->
 		</div>
 
 	</div>

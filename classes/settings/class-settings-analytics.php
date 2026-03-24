@@ -9,6 +9,7 @@ class AnalyticsSettings {
 	public function __construct() {
 		add_action('admin_menu', [ $this, 'add_menu_page' ]);
 		add_action('admin_init', [ $this, 'register_settings' ]);
+		add_filter('option_page_capability_real_electronics_analytics_group', [ $this, 'get_required_capability' ]);
 	}
 
 	/**
@@ -19,10 +20,16 @@ class AnalyticsSettings {
 		add_options_page(
 			'Analytics Settings',
 			'Analytics',
-			'manage_options',
+			'edit_pages',
 			'real-electronics-analytics',
 			[ $this, 'render_settings_page' ]
 		);
+
+	}
+
+	public function get_required_capability(): string {
+
+		return 'edit_pages';
 
 	}
 

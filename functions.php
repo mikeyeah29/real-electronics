@@ -82,6 +82,27 @@ $manufacturers_meta = new \RealElectronics\Theme\SimpleMetaBoxes('manufacturer',
     ]
 ]);
 
+$manufacturers_repair_meta = new \RealElectronics\Theme\SimpleMetaBoxes('manufacturer', 'Manufacturer Reapir Items', [
+    'servicing_items' => [
+        'label' => 'Servicing Items',
+        'type' => 'repeatable',
+        'fields' => [
+            'title' => [
+                'label' => 'Title',
+                'type' => 'text',
+            ],
+            'subtitle' => [
+                'label' => 'Subtitle',
+                'type' => 'text',
+            ],
+            'image_id' => [
+                'label' => 'Image',
+                'type' => 'image',
+            ]
+        ],
+    ]
+]);
+
 $repair_services_meta = new \RealElectronics\Theme\SimpleMetaBoxes('repair_service', 'Repair Service Meta', [
     'repair_tab_show' => [
         'label' => 'Show in Tabs?',

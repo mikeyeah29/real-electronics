@@ -28,6 +28,49 @@ get_header();
                 $button_secondary_text = 'Repair Enquiry';
                 $button_secondary_url = home_url('/request-a-repair/');
             }
+
+            $servicing_items = $manufacturer->getServicingItems();
+
+            if (empty($servicing_items)) {
+                $servicing_items = [
+                    [
+                        'title' => 'Mixers',
+                        'image_id' => 0,
+                        'image' => get_template_directory_uri() . '/assets/images/amp-texture.jpg',
+                        'link' => home_url('/request-a-repair/'),
+                    ],
+                    [
+                        'title' => 'CDJs',
+                        'image_id' => 0,
+                        'image' => get_template_directory_uri() . '/assets/images/amp-texture.jpg',
+                        'link' => home_url('/request-a-repair/'),
+                    ],
+                    [
+                        'title' => 'Controllers',
+                        'image_id' => 0,
+                        'image' => get_template_directory_uri() . '/assets/images/amp-texture.jpg',
+                        'link' => home_url('/request-a-repair/'),
+                    ],
+                    [
+                        'title' => 'Turntables',
+                        'image_id' => 0,
+                        'image' => get_template_directory_uri() . '/assets/images/amp-texture.jpg',
+                        'link' => home_url('/request-a-repair/'),
+                    ],
+                    [
+                        'title' => 'Amplifiers',
+                        'image_id' => 0,
+                        'image' => get_template_directory_uri() . '/assets/images/amp-texture.jpg',
+                        'link' => home_url('/request-a-repair/'),
+                    ],
+                    [
+                        'title' => 'Speakers',
+                        'image_id' => 0,
+                        'image' => get_template_directory_uri() . '/assets/images/amp-texture.jpg',
+                        'link' => home_url('/request-a-repair/'),
+                    ],
+                ];
+            }
             
 		?>
 
@@ -38,8 +81,8 @@ get_header();
                 [
                     'title'      => $hero_title,
                     'logo'       => [
-                        'url'   => $manufacturer_logo['url'],
-                        'alt'   => $manufacturer_logo['alt'],
+                        'url'   => ( isset($manufacturer_logo['url']) ? $manufacturer_logo['url'] : null),
+                        'alt'   => ( isset($manufacturer_logo['alt']) ? $manufacturer_logo['alt'] : null),
                         'width' => $manufacturer_logo_width,
                     ],
                     'background' => get_the_post_thumbnail_url(),
@@ -62,6 +105,45 @@ get_header();
             ?>
 
         </div>
+
+        <!-- Servicing section start -->
+        <section class="servicing-section pt-lg pb-lg gradient-primary">
+            <div class="container">
+                <h2 class="wp-block-heading has-xl-font-size text-center mb-md has-white-color">Servicing</h2>
+
+                <div class="archive-grid d-flex flex-wrap servicing-grid">
+                    <?php foreach ( $servicing_items as $servicing_item ) : ?>
+                        <div class="w-50 w-md-33 w-lg-25 pl-sm pr-sm pb-sm mb-sm">
+                            <article class="archive-card servicing-card">
+                                <a href="<?php echo esc_url( $servicing_item['link'] ?: home_url( '/request-a-repair/' ) ); ?>" class="archive-card__link">
+                                    <div class="archive-card__image servicing-card__image">
+                                        <?php if ( ! empty( $servicing_item['image_id'] ) ) : ?>
+                                            <?php echo wp_get_attachment_image( $servicing_item['image_id'], 'medium', false, [
+                                                'alt' => $servicing_item['title'] . ' servicing',
+                                            ] ); ?>
+                                        <?php else : ?>
+                                            <img
+                                                src="<?php echo esc_url( $servicing_item['image'] ); ?>"
+                                                alt="<?php echo esc_attr( $servicing_item['title'] . ' servicing' ); ?>"
+                                            >
+                                        <?php endif; ?>
+                                    </div>
+
+                                    <h3 class="has-white-color">
+                                        <span class="d-block archive-card__title font-heading"><?php echo esc_html( $servicing_item['title'] ); ?></span>
+                                        <span class="d-block archive-card__title font-heading">
+                                            <?php echo esc_html( $servicing_item['subtitle'] ); ?>
+                                        </span>
+                                    </h3>
+                                </a>
+                            </article>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicing section end -->
 
 		<div class="wp-block-cover pt-xl pb-xl pl-0 pr-0" id="manufacturer-info">
 			<img decoding="async" class="wp-block-cover__image-background wp-image-188 size-large" alt="Guitar amp texture" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/amp-texture.jpg' ); ?>" data-object-fit="cover">

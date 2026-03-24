@@ -9,6 +9,7 @@ class GlobalSettings {
 	public function __construct() {
 		add_action('admin_menu', [ $this, 'add_menu_page' ]);
 		add_action('admin_init', [ $this, 'register_settings' ]);
+		add_filter('option_page_capability_real_electronics_global_group', [ $this, 'get_required_capability' ]);
 	}
 
 	public function add_menu_page(): void {
@@ -20,6 +21,12 @@ class GlobalSettings {
 			'real-electronics-global',
 			[ $this, 'render_settings_page' ]
 		);
+
+	}
+
+	public function get_required_capability(): string {
+
+		return 'edit_pages';
 
 	}
 
