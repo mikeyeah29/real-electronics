@@ -16,7 +16,8 @@ p, a, span, li, div, input, textarea, select, button {
 
 h2, .hdln-2 {
     font-size: var(--wp--preset--font-size--xl);
-    padding-bottom: clamp(1rem, 2vw, 2rem);
+    // padding-bottom: clamp(1rem, 2vw, 2rem);
+    padding-bottom: clamp(1rem, 2vw, 1rem);
 }
 
 p {

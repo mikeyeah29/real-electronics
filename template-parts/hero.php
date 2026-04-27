@@ -1,6 +1,7 @@
 <?php
 
 $title = $args['title'];
+$subtitle = $args['subtitle'];
 $logo = $args['logo'];
 $background = $args['background'];
 
@@ -31,9 +32,9 @@ $button_secondary_url = $args['button_secondary_url'] ?? null;
 
 			<div class="wp-block-column m-auto is-layout-flow wp-block-column-is-layout-flow"
 				style="
-					padding-top:var(--wp--preset--spacing--xl);
+					padding-top: 0px;
 					padding-right:var(--wp--preset--spacing--xl);
-					padding-bottom:var(--wp--preset--spacing--sm);
+					padding-bottom: 0px;
 					padding-left:var(--wp--preset--spacing--xl);
 				">
 
@@ -63,7 +64,7 @@ $button_secondary_url = $args['button_secondary_url'] ?? null;
 					style="padding-bottom:var(--wp--preset--spacing--md)"
 					data-aos="fade-up"
 				>
-					Repair and servicing for <?php echo esc_html( $manufacturer ); ?> equipment, by experienced technicians.
+					<?php echo esc_html( $subtitle ); ?>
 				</p>
 
 				<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-block-buttons-is-layout-flex" data-aos="fade-up">

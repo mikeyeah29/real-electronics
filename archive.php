@@ -3,9 +3,14 @@
 get_header();
 
 $manufacturer_options = get_option('real_electronics_manufacturer_settings') ?: [];
+$manufacturer_description = $manufacturer_options['description'] ?? '';
 $other_manufacturers = $manufacturer_options['other_manufacturers'] ?? [];
 // $other_manufacturers = preg_split('/\r\n|\r|\n/', $manufacturer_options['other_manufacturers'] ?? '');
 // $other_manufacturers = array_values(array_filter(array_map('trim', $other_manufacturers ?: [])));
+
+// echo "<pre>";
+// print_r($manufacturer_options);
+// echo "</pre>";
 
 global $wp_query;
 
@@ -18,7 +23,17 @@ if ( ! empty( $wp_query->posts ) ) {
 <main id="primary" class="site-main archive">
 
 	<div class="archive-hero">
-		<h1 class="has-xxl-font-size">Manufacturers</h1>
+		<div class="container">
+			<h1 class="has-xxl-font-size">Manufacturers</h1>
+		</div>
+	</div>
+
+	<div class="container text-center mt-lg">
+		<div class="w-md-66 ml-auto mr-auto">
+			<?php if ( $manufacturer_description ) : ?>
+				<?php echo wp_kses_post(wpautop($manufacturer_description)); ?>
+			<?php endif; ?>
+		</div>
 	</div>
 
 	<div class="container container--wide archive-content pt-lg pb-lg">

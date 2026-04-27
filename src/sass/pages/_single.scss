@@ -32,23 +32,46 @@
     }
 }
 
-.servicing-section {
-    background: #f7f4ef;
-}
-
-.servicing-grid {
-    justify-content: center;
-}
-
-.servicing-card {
-    height: 100%;
-}
-
-.servicing-card__image {
-    img {
-        width: 100%;
-        aspect-ratio: 4 / 3;
-        object-fit: cover;
-        border-radius: 4px;
+.warranty-info-how-to-book {
+    position: relative;
+    svg {
+        width: 200px;
+        height: 200px;
+        color: #ffefe4;
+        position: absolute;
+        z-index: -1;
+        right: var(--wp--preset--spacing--md);
+        top: var(--wp--preset--spacing--md);
+    }
+    strong {
+        font-weight: 600;
+    }
+    ul, ol {
+        font-size: var(--wp--preset--font-size--sm);
+    }
+    a {
+        font-weight: 400;
+        color: var(--wp--preset--color--primary);
     }
 }
+
+// .servicing-section {
+//     background: #f7f4ef;
+// }
+
+// .servicing-grid {
+//     justify-content: center;
+// }
+
+// .servicing-card {
+//     height: 100%;
+// }
+
+// .servicing-card__image {
+//     img {
+//         width: 100%;
+//         aspect-ratio: 4 / 3;
+//         object-fit: cover;
+//         border-radius: 4px;
+//     }
+// }

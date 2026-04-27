@@ -1,0 +1,17 @@
+.warranty-list {
+    li {
+        border-bottom: 1px solid var(--wp--preset--color--primary);
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    a {
+        padding: 8px 0px;
+        display: block;
+        text-decoration: none;
+        &:hover {
+            background-color: var(--wp--preset--color--primary);
+            color: var(--wp--preset--color--white);
+        }
+    }
+}

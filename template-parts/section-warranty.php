@@ -46,6 +46,17 @@ $paragraph_right = $options['authorised_non_warranty_repairs'] ?? '';
                     <h3 class="wp-block-heading has-secondary-color has-text-color has-link-color has-lg-font-size mt-0 mb-0"><?php echo $heading_left; ?></h3>
 
                     <p><?php echo wpautop( esc_html( $paragraph_left ) ); ?></p>
+
+                    <div class="mt-md">
+                        <?php get_template_part('template-parts/components/button', null, [
+                            'text' => 'View In-Warranty Information',
+                            'link' => '#warranty-info',
+                            'color_slug' => 'primary',
+                            'text_color' => 'white',
+                            'icon' => false,
+                            'solid' => true,
+                        ]); ?>
+                    </div>
                 </div>
             </div>
 
@@ -57,6 +68,17 @@ $paragraph_right = $options['authorised_non_warranty_repairs'] ?? '';
                     <h3 class="wp-block-heading has-secondary-color has-text-color has-link-color has-lg-font-size mt-0 mb-0"><?php echo $heading_right; ?></h3>
 
                     <p><?php echo wpautop( esc_html( $paragraph_right ) ); ?></p>
+
+                    <div class="mt-md"> 
+                        <?php get_template_part('template-parts/components/button', null, [
+                            'text' => 'Book a Repair',
+                            'link' => home_url('/request-a-repair/'),
+                            'color_slug' => 'primary',
+                            'text_color' => 'white',
+                            'icon' => false,
+                            'solid' => true,
+                        ]); ?>
+                    </div>
                 </div>
             </div>
         </div>

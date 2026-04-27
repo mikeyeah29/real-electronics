@@ -12,6 +12,18 @@ class Manufacturer {
 		$this->post_title = get_the_title( $this->post_id );
 	}
 
+    public function getHeroSubtitle(): ?string {
+
+        $subtitle = get_field('hero_subheading', $this->post_id);
+
+        if ($subtitle) {
+            return $subtitle;
+        }
+
+        $subtitle = "Professional repair and servicing for " . esc_html( $this->post_title ) . " equipment, carried out by experienced technicians using manufacturer-approved processes.";
+
+        return $subtitle;
+    }
 
     public function isAuthorised(): ?bool {
         return get_post_meta( $this->post_id, 'is_authorised', true );

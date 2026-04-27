@@ -42,6 +42,20 @@ class ManufacturerSettings {
 			[ $this, 'sanitize' ]
 		);
 
+		add_settings_section(
+			'real_electronics_manufacturer_general',
+			'General',
+			'__return_empty_string',
+			'real-electronics-manufacturers'
+		);
+
+		$this->add_field(
+			'description',
+			'Description',
+			'textarea',
+			'real_electronics_manufacturer_general'
+		);
+
 		/**
 		 * Authorised Manufacturers
 		 */
@@ -144,6 +158,7 @@ class ManufacturerSettings {
 	public function sanitize(array $input): array {
 
 		return [
+			'description'                          => sanitize_textarea_field($input['description'] ?? ''),
 			'authorised_warranty_repairs'          => sanitize_textarea_field($input['authorised_warranty_repairs'] ?? ''),
 			'authorised_non_warranty_repairs'      => sanitize_textarea_field($input['authorised_non_warranty_repairs'] ?? ''),
 			'other_manufacturers'                  => sanitize_textarea_field($input['other_manufacturers'] ?? ''),

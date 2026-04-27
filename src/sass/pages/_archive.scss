@@ -1,5 +1,5 @@
 .archive-hero {
-    height: 240px;
+    min-height: 240px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,7 +7,10 @@
     background: var(--wp--preset--color--black);
     color: var(--wp--preset--color--white);
     margin-top: 132px;
-    font-weight: 600 !important;
+    h1 {
+        font-weight: 600 !important;
+    }
+    // padding: 4rem 0px 5rem 0px;
     @media (max-width: 768px) {
         margin-top: 80px;
     }

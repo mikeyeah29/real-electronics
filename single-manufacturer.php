@@ -16,11 +16,18 @@ get_header();
             $manufacturer_logo = $manufacturer->getHeroLogo();
             $manufacturer_logo_width = $manufacturer->getHeroLogoWidth();
             $hero_title = $manufacturer->getHeroTitle();
+            $hero_subtitle = $manufacturer->getHeroSubtitle();
 
             $button_primary_text = 'Repair Enquiry';
             $button_primary_url = home_url('/request-a-repair/');
             $button_secondary_text = 'Warranty Repairs';
             $button_secondary_url = '#warranty-repairs';
+            $warranty_enabled = (bool) get_field('warranty_enabled');
+            $warranty_info_heading = get_field('warranty_info_heading');
+            $warranty_summary = get_field('warranty_summary');
+            $warranty_cta_text = get_field('warranty_cta_text');
+            $warranty_cta_url = get_field('warranty_cta_url');
+            $warranty_details = get_field('warranty_details');
 
             if (!$manufacturer->isAuthorised()) {
                 $button_primary_text = null;
@@ -30,47 +37,6 @@ get_header();
             }
 
             $servicing_items = $manufacturer->getServicingItems();
-
-            if (empty($servicing_items)) {
-                $servicing_items = [
-                    [
-                        'title' => 'Mixers',
-                        'image_id' => 0,
-                        'image' => get_template_directory_uri() . '/assets/images/amp-texture.jpg',
-                        'link' => home_url('/request-a-repair/'),
-                    ],
-                    [
-                        'title' => 'CDJs',
-                        'image_id' => 0,
-                        'image' => get_template_directory_uri() . '/assets/images/amp-texture.jpg',
-                        'link' => home_url('/request-a-repair/'),
-                    ],
-                    [
-                        'title' => 'Controllers',
-                        'image_id' => 0,
-                        'image' => get_template_directory_uri() . '/assets/images/amp-texture.jpg',
-                        'link' => home_url('/request-a-repair/'),
-                    ],
-                    [
-                        'title' => 'Turntables',
-                        'image_id' => 0,
-                        'image' => get_template_directory_uri() . '/assets/images/amp-texture.jpg',
-                        'link' => home_url('/request-a-repair/'),
-                    ],
-                    [
-                        'title' => 'Amplifiers',
-                        'image_id' => 0,
-                        'image' => get_template_directory_uri() . '/assets/images/amp-texture.jpg',
-                        'link' => home_url('/request-a-repair/'),
-                    ],
-                    [
-                        'title' => 'Speakers',
-                        'image_id' => 0,
-                        'image' => get_template_directory_uri() . '/assets/images/amp-texture.jpg',
-                        'link' => home_url('/request-a-repair/'),
-                    ],
-                ];
-            }
             
 		?>
 
@@ -80,6 +46,7 @@ get_header();
                 null,
                 [
                     'title'      => $hero_title,
+                    'subtitle'   => $hero_subtitle,
                     'logo'       => [
                         'url'   => ( isset($manufacturer_logo['url']) ? $manufacturer_logo['url'] : null),
                         'alt'   => ( isset($manufacturer_logo['alt']) ? $manufacturer_logo['alt'] : null),
@@ -106,42 +73,46 @@ get_header();
 
         </div>
 
-        <!-- Servicing section start -->
-        <section class="servicing-section pt-lg pb-lg gradient-primary">
-            <div class="container">
-                <h2 class="wp-block-heading has-xl-font-size text-center mb-md has-white-color">Servicing</h2>
+        <?php if (!empty($servicing_items)) : ?>
 
-                <div class="archive-grid d-flex flex-wrap servicing-grid">
-                    <?php foreach ( $servicing_items as $servicing_item ) : ?>
-                        <div class="w-50 w-md-33 w-lg-25 pl-sm pr-sm pb-sm mb-sm">
-                            <article class="archive-card servicing-card">
-                                <a href="<?php echo esc_url( $servicing_item['link'] ?: home_url( '/request-a-repair/' ) ); ?>" class="archive-card__link">
-                                    <div class="archive-card__image servicing-card__image">
-                                        <?php if ( ! empty( $servicing_item['image_id'] ) ) : ?>
-                                            <?php echo wp_get_attachment_image( $servicing_item['image_id'], 'medium', false, [
-                                                'alt' => $servicing_item['title'] . ' servicing',
-                                            ] ); ?>
-                                        <?php else : ?>
-                                            <img
-                                                src="<?php echo esc_url( $servicing_item['image'] ); ?>"
-                                                alt="<?php echo esc_attr( $servicing_item['title'] . ' servicing' ); ?>"
-                                            >
-                                        <?php endif; ?>
-                                    </div>
+            <!-- Servicing section start -->
+            <section class="servicing-section pt-lg pb-lg gradient-primary">
+                <div class="container">
+                    <h2 class="wp-block-heading has-xl-font-size text-center mb-md has-white-color">Servicing</h2>
 
-                                    <h3 class="has-white-color">
-                                        <span class="d-block archive-card__title font-heading"><?php echo esc_html( $servicing_item['title'] ); ?></span>
-                                        <span class="d-block archive-card__title font-heading">
-                                            <?php echo esc_html( $servicing_item['subtitle'] ); ?>
-                                        </span>
-                                    </h3>
-                                </a>
-                            </article>
-                        </div>
-                    <?php endforeach; ?>
+                    <div class="archive-grid d-flex flex-wrap servicing-grid">
+                        <?php foreach ( $servicing_items as $servicing_item ) : ?>
+                            <div class="w-50 w-md-33 w-lg-25 pl-sm pr-sm pb-sm mb-sm">
+                                <article class="archive-card servicing-card">
+                                    <a href="<?php echo esc_url( $servicing_item['link'] ?: home_url( '/request-a-repair/' ) ); ?>" class="archive-card__link">
+                                        <div class="archive-card__image servicing-card__image">
+                                            <?php if ( ! empty( $servicing_item['image_id'] ) ) : ?>
+                                                <?php echo wp_get_attachment_image( $servicing_item['image_id'], 'medium', false, [
+                                                    'alt' => $servicing_item['title'] . ' servicing',
+                                                ] ); ?>
+                                            <?php else : ?>
+                                                <img
+                                                    src="<?php echo esc_url( $servicing_item['image'] ); ?>"
+                                                    alt="<?php echo esc_attr( $servicing_item['title'] . ' servicing' ); ?>"
+                                                >
+                                            <?php endif; ?>
+                                        </div>
+
+                                        <h3 class="has-white-color">
+                                            <span class="d-block archive-card__title font-heading"><?php echo esc_html( $servicing_item['title'] ); ?></span>
+                                            <span class="d-block archive-card__title font-heading">
+                                                <?php echo esc_html( $servicing_item['subtitle'] ); ?>
+                                            </span>
+                                        </h3>
+                                    </a>
+                                </article>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+        <?php endif; ?>
 
         <!-- Servicing section end -->
 
@@ -232,8 +203,8 @@ get_header();
 
         ?>
 
-        <?php 
-        
+        <?php
+
             $cta_args = $manufacturer->getCallToAction();
 
             get_template_part('template-parts/section-cta', null, [
@@ -243,6 +214,44 @@ get_header();
             ]); 
         
         ?>
+
+        <?php if ($warranty_enabled && ($warranty_summary || $warranty_details || ($warranty_cta_text && $warranty_cta_url))) : ?>
+            <div class="warranty-info pt-xl pb-lg" id="warranty-info">
+
+                <div class="container">
+                    <div class="d-md-flex">
+                        <div class="w-md-33 mb-md">
+                            <h2 class="wp-block-heading has-xl-font-size"><?php echo esc_html($warranty_info_heading ?: get_the_title() . ' In-Warranty Repairs'); ?></h2>
+
+                            <?php if ($warranty_summary) : ?>
+                                <?php echo wpautop(esc_html($warranty_summary)); ?>
+                            <?php endif; ?>
+
+                            <?php if ($warranty_cta_text && $warranty_cta_url) : ?>
+                                <p class="mt-md">
+                                    <a class="btn btn-primary" href="<?php echo esc_url($warranty_cta_url); ?>">
+                                        <?php echo esc_html($warranty_cta_text); ?>
+                                    </a>
+                                </p>
+                            <?php endif; ?>
+                        </div>
+
+                        <div class="w-md-66">
+                            <div class="warranty-info-how-to-book b-light-orange br-sm p-md">
+                                <div class="">
+                                    <?php get_template_part('template-parts/svg/info'); ?>
+                                    <h3 class="wp-block-heading has-xl-font-size mb-0 has-primary-color">How to Book a Repair</h3>
+                                </div>
+
+                                <?php if ($warranty_details) : ?>
+                                    <?php echo wp_kses_post(apply_filters('the_content', $warranty_details)); ?>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
 
 	<?php endwhile; ?>
 <?php endif; ?>

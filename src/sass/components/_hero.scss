@@ -1,7 +1,12 @@
 .hero {
-    height: calc(100vh - 4rem);
+    // height: calc(100vh - 4rem);
     min-height: 660px;
-    padding: 0px var(--wp--style--block-gap);
+    // padding: 0px var(--wp--style--block-gap);
+    margin-top: 132px;
+    padding: 2rem var(--wp--style--block-gap) 2rem var(--wp--style--block-gap);
+    @media (max-width: 768px) {
+        margin-top: 80px;
+    }
     h1 {
         margin: 2rem 0px;
     }
