@@ -1,4 +1,11 @@
 .warranty-list {
+    position: sticky;
+    top: 180px;
+    @media (max-width: 768px) {
+        position: relative;
+        top: 0;
+        margin-bottom: 32px;
+    }
     li {
         border-bottom: 1px solid var(--wp--preset--color--primary);
         &:last-child {
@@ -10,8 +17,7 @@
         display: block;
         text-decoration: none;
         &:hover {
-            background-color: var(--wp--preset--color--primary);
-            color: var(--wp--preset--color--white);
+            color: var(--wp--preset--color--primary);
         }
     }
 }

@@ -1,0 +1,15 @@
+.post-content {
+    strong {
+        font-weight: 600;
+    }
+
+    ul,
+    ol {
+        font-size: var(--wp--preset--font-size--sm);
+    }
+
+    a {
+        font-weight: 400;
+        color: var(--wp--preset--color--primary);
+    }
+}

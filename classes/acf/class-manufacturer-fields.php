@@ -190,39 +190,39 @@ class ManufacturerFields {
 					],
 				],
 
-				[
-					'key' => 'field_warranty_cta_text',
-					'label' => 'Warranty CTA Text',
-					'name' => 'warranty_cta_text',
-					'type' => 'text',
-					'default_value' => 'View warranty details',
-					'conditional_logic' => [
-						[
-							[
-								'field' => 'field_warranty_enabled',
-								'operator' => '==',
-								'value' => '1',
-							],
-						],
-					],
-				],
+				// [
+				// 	'key' => 'field_warranty_cta_text',
+				// 	'label' => 'Warranty CTA Text',
+				// 	'name' => 'warranty_cta_text',
+				// 	'type' => 'text',
+				// 	'default_value' => 'View warranty details',
+				// 	'conditional_logic' => [
+				// 		[
+				// 			[
+				// 				'field' => 'field_warranty_enabled',
+				// 				'operator' => '==',
+				// 				'value' => '1',
+				// 			],
+				// 		],
+				// 	],
+				// ],
 
-				[
-					'key' => 'field_warranty_cta_url',
-					'label' => 'Warranty CTA URL',
-					'name' => 'warranty_cta_url',
-					'type' => 'url',
-					'instructions' => 'Use an external URL, repair form URL, or leave blank if linking to an on-page anchor.',
-					'conditional_logic' => [
-						[
-							[
-								'field' => 'field_warranty_enabled',
-								'operator' => '==',
-								'value' => '1',
-							],
-						],
-					],
-				],
+				// [
+				// 	'key' => 'field_warranty_cta_url',
+				// 	'label' => 'Warranty CTA URL',
+				// 	'name' => 'warranty_cta_url',
+				// 	'type' => 'url',
+				// 	'instructions' => 'Use an external URL, repair form URL, or leave blank if linking to an on-page anchor.',
+				// 	'conditional_logic' => [
+				// 		[
+				// 			[
+				// 				'field' => 'field_warranty_enabled',
+				// 				'operator' => '==',
+				// 				'value' => '1',
+				// 			],
+				// 		],
+				// 	],
+				// ],
 
 				[
 					'key' => 'field_warranty_details',

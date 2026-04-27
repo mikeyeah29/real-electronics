@@ -2,6 +2,23 @@
 /**
  * Template Name: Warranty
  */
+
+the_post();
+
+$manufacturer_warranty_query = new \WP_Query([
+	'post_type' => 'manufacturer',
+	'post_status' => 'publish',
+	'posts_per_page' => -1,
+	'orderby' => 'title',
+	'order' => 'ASC',
+	'meta_query' => [
+		[
+			'key' => 'warranty_enabled',
+			'value' => '1',
+			'compare' => '=',
+		],
+	],
+]);
 ?>
 
 <?php get_header(); ?>
@@ -28,86 +45,72 @@
 <!-- /wp:cover -->
 
 <div class="container d-md-flex gap-lg" style="margin-bottom: 80px; margin-top: 80px;">
-    <div class="w-md-33">
-        <h2 class="wp-block-heading has-xl-font-size">Manufacturers</h2>
-        <ul class="list-reset warranty-list">
-            <li>
-                <a href="#pioneer">Pioneer</a>
-            </li>
-            <li>
-                <a href="#mark-bass">Mark Bass</a>
-            </li>
-            <li>
-                <a href="#dynaudio">Dynaudio</a>
-            </li>
-            <li>
-                <a href="#adam-hall">Adam Hall</a>
-            </li>
-            <li>
-                <a href="#ld-systems">LD Systems</a>
-            </li>
-            <li>
-                <a href="#roland-boss">Roland/BOSS</a>
-            </li>
-            <li>
-                <a href="#zoom">Zoom</a>
-            </li>
-            <li>
-                <a href="#icon">iCON</a>
-            </li>
-        </ul>
-    </div>
-    <div class="w-md-66">
-        <?php the_content(); ?>
-        <div id="pioneer">
-            <h2 class="wp-block-heading has-xl-font-size">In warranty repairs for Pioneer</h2>
-            <p>Pioneer is a Japanese company that produces audio equipment. It is a subsidiary of Sony. Pioneer was founded in 1938 by Masaru Ibuka and Akio Morita. Pioneer is known for its audio equipment, such as CD players, DVD players, and Blu-ray players.</p>
-            <h3>How to book a repair</h3>
-            <p>To book a repair for Pioneer, please contact us at <a href="mailto:info@pioneer.com">info@pioneer.com</a>.</p>
-        </div>
-        <div id="mark-bass">
-            <h2 class="wp-block-heading has-xl-font-size">In warranty repairs for Mark Bass</h2>
-            <p>Mark Bass is a company that produces audio equipment. It is a subsidiary of Yamaha. Mark Bass was founded in 1970 by Mark Bass. Mark Bass is known for its audio equipment, such as amplifiers, speakers, and mixers.</p>
-            <h3>How to book a repair</h3>
-            <p>To book a repair for Mark Bass, please contact us at <a href="mailto:info@markbass.com">info@markbass.com</a>.</p>
-        </div>
-        <div id="dynaudio">
-            <h2 class="wp-block-heading has-xl-font-size">In warranty repairs for Dynaudio</h2>
-            <p>Dynaudio is a company that produces audio equipment. It is a subsidiary of Yamaha. Dynaudio was founded in 1972 by Søren Pind. Dynaudio is known for its audio equipment, such as amplifiers, speakers, and mixers.</p>
-            <h3>How to book a repair</h3>
-            <p>To book a repair for Dynaudio, please contact us at <a href="mailto:info@dynaudio.com">info@dynaudio.com</a>.</p>
-        </div>
-        <div id="adam-hall">
-            <h2 class="wp-block-heading has-xl-font-size">In warranty repairs for Adam Hall</h2>
-            <p>Adam Hall is a company that produces audio equipment. It is a subsidiary of Yamaha. Adam Hall was founded in 1974 by Adam Hall. Adam Hall is known for its audio equipment, such as amplifiers, speakers, and mixers.</p>
-            <h3>How to book a repair</h3>
-            <p>To book a repair for Adam Hall, please contact us at <a href="mailto:info@adamhall.com">info@adamhall.com</a>.</p>
-        </div>
-        <div id="ld-systems">
-            <h2 class="wp-block-heading has-xl-font-size">In warranty repairs for LD Systems</h2>
-            <p>LD Systems is a company that produces audio equipment. It is a subsidiary of Yamaha. LD Systems was founded in 1976 by LD Systems. LD Systems is known for its audio equipment, such as amplifiers, speakers, and mixers.</p>
-            <h3>How to book a repair</h3>
-            <p>To book a repair for LD Systems, please contact us at <a href="mailto:info@ldsystems.com">info@ldsystems.com</a>.</p>
-        </div>
-        <div id="roland-boss">
-            <h2 class="wp-block-heading has-xl-font-size">In warranty repairs for Roland/BOSS</h2>
-            <p>Roland/BOSS is a company that produces audio equipment. It is a subsidiary of Yamaha. Roland/BOSS was founded in 1978 by Roland/BOSS. Roland/BOSS is known for its audio equipment, such as amplifiers, speakers, and mixers.</p>
-            <h3>How to book a repair</h3>
-            <p>To book a repair for Roland/BOSS, please contact us at <a href="mailto:info@rolandboss.com">info@rolandboss.com</a>.</p>
-        </div>
-        <div id="zoom">
-            <h2 class="wp-block-heading has-xl-font-size">In warranty repairs for Zoom</h2>
-            <p>Zoom is a company that produces audio equipment. It is a subsidiary of Yamaha. Zoom was founded in 1980 by Zoom. Zoom is known for its audio equipment, such as amplifiers, speakers, and mixers.</p>
-            <h3>How to book a repair</h3>
-            <p>To book a repair for Zoom, please contact us at <a href="mailto:info@zoom.com">info@zoom.com</a>.</p>
-        </div>
-        <div id="icon">
-            <h2 class="wp-block-heading has-xl-font-size">In warranty repairs for iCON</h2>
-            <p>iCON is a company that produces audio equipment. It is a subsidiary of Yamaha. iCON was founded in 1982 by iCON. iCON is known for its audio equipment, such as amplifiers, speakers, and mixers.</p>
-            <h3>How to book a repair</h3>
-            <p>To book a repair for iCON, please contact us at <a href="mailto:info@icon.com">info@icon.com</a>.</p>
-        </div>
-    </div>
+	<div class="w-md-33">
+		<h2 class="wp-block-heading has-xl-font-size">Manufacturers</h2>
+
+		<?php if ( $manufacturer_warranty_query->have_posts() ) : ?>
+			<ul class="list-reset warranty-list">
+				<?php while ( $manufacturer_warranty_query->have_posts() ) : $manufacturer_warranty_query->the_post(); ?>
+					<li>
+						<a href="#<?php echo esc_attr( sanitize_title( get_the_title() ) ); ?>">
+							<?php echo esc_html( get_the_title() ); ?>
+						</a>
+					</li>
+				<?php endwhile; ?>
+			</ul>
+
+			<?php wp_reset_postdata(); ?>
+		<?php endif; ?>
+	</div>
+
+	<div class="w-md-66">
+		<div class="post-content">
+			<?php the_content(); ?>
+
+			<?php if ( $manufacturer_warranty_query->have_posts() ) : ?>
+				<?php $manufacturer_warranty_query->rewind_posts(); ?>
+
+				<?php while ( $manufacturer_warranty_query->have_posts() ) : $manufacturer_warranty_query->the_post(); ?>
+					<?php
+					$warranty_info_heading = get_field( 'warranty_info_heading' );
+					$warranty_summary = get_field( 'warranty_summary' );
+					$warranty_cta_text = get_field( 'warranty_cta_text' );
+					$warranty_cta_url = get_field( 'warranty_cta_url' );
+					$warranty_details = get_field( 'warranty_details' );
+					?>
+
+					<div id="<?php echo esc_attr( sanitize_title( get_the_title() ) ); ?>" class="mb-lg" style="scroll-margin-top: 150px;">
+						<h2 class="wp-block-heading has-xl-font-size">
+							<?php echo esc_html( $warranty_info_heading ?: get_the_title() . ' In-Warranty Repairs' ); ?>
+						</h2>
+
+						<?php if ( $warranty_summary ) : ?>
+							<?php echo wpautop( esc_html( $warranty_summary ) ); ?>
+						<?php endif; ?>
+
+                        <h3 class="wp-block-heading has-lg-font-size">How to Book a Repair</h3>
+
+						<?php if ( $warranty_details ) : ?>
+							<?php echo wp_kses_post( apply_filters( 'the_content', $warranty_details ) ); ?>
+						<?php endif; ?>
+
+						<?php if ( $warranty_cta_text && $warranty_cta_url ) : ?>
+							<p>
+								<a class="btn btn-primary" href="<?php echo esc_url( $warranty_cta_url ); ?>">
+									<?php echo esc_html( $warranty_cta_text ); ?>
+								</a>
+							</p>
+						<?php endif; ?>
+                        <hr class="mt-lg b-light-orange">
+					</div>
+				<?php endwhile; ?>
+
+				<?php wp_reset_postdata(); ?>
+			<?php else : ?>
+				<p>No warranty information is available right now.</p>
+			<?php endif; ?>
+		</div>
+	</div>
 </div>
 
 <?php get_footer(); ?>
