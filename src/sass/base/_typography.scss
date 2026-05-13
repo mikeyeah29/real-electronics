@@ -32,6 +32,8 @@ p {
 .txt-300 { font-weight: 300; }
 .txt-600 { font-weight: 600; }
 
+.txt-white { color: var(--wp--preset--color--white); }
+
 a {
     text-decoration: none;
     &:hover {

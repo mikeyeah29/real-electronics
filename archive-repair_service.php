@@ -1,12 +1,23 @@
 <?php
 
 get_header();
+
+$repair_service_options = get_option('real_electronics_repair_service_settings') ?: [];
+$repair_service_description = $repair_service_options['description'] ?? '';
 ?>
 
 <main id="primary" class="site-main archive">
 
 	<div class="archive-hero">
 		<h1 class="has-xxl-font-size">Repairs</h1>
+	</div>
+
+	<div class="container text-center mt-lg">
+		<div class="w-md-66 ml-auto mr-auto">
+			<?php if ( $repair_service_description ) : ?>
+				<?php echo wp_kses_post(wpautop($repair_service_description)); ?>
+			<?php endif; ?>
+		</div>
 	</div>
 
 	<div class="container container--wide archive-content pt-lg pb-lg">
@@ -26,7 +37,7 @@ get_header();
 
                             <a href="<?php the_permalink(); ?>" class="archive-card__link">
 
-                                <div class="archive-card__image">
+                                <div class="archive-card__image is-cover">
                                     <?php the_post_thumbnail('medium', [
                                         'alt' => get_the_title() . ' repairs'
                                     ]); ?>

@@ -13,7 +13,7 @@
 	<div class="footer-banner">
 		<div class="container container--wide">
 			<div class="d-md-flex align-items-center justify-content-center gap-16">
-				<p class="has-lg-font-size mb-0 txt-600 has-rajdhani-font-family">Official Authorized Pioneer DJ Service center</p>
+				<p class="has-lg-font-size mb-0 txt-600 has-rajdhani-font-family">Official Authorised Pioneer DJ Service Centre</p>
 				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/pioneer.png" alt="Pioneer Logo" style="width: 200px; height: auto;" />
 			</div>
 		</div>

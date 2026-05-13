@@ -64,7 +64,7 @@ $repair_services = get_posts([
                 $image_alt = $image_alt ?: get_the_title($post_id);
                 $content_html = apply_filters('the_content', $repair_service->post_content);
                 ?>
-                <div class="repairs-tabs__panel" data-panel="<?php echo esc_attr($panel_key); ?>">
+                <div class="repairs-tabs__panel wysiwyg-content" data-panel="<?php echo esc_attr($panel_key); ?>">
                     <?php get_template_part('template-parts/blocks/repair-tabs/repair-content', null, [
                         'title' => $panel_title,
                         'content_html' => $content_html,

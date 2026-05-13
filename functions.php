@@ -63,8 +63,10 @@ new \RealElectronics\Shortcodes\ProcessStacked();
 
 require_once get_template_directory() . '/classes/cpt/class-manufacturers.php';
 require_once get_template_directory() . '/classes/cpt/class-repair-services.php';
+require_once get_template_directory() . '/classes/cpt/class-reviews.php';
 new \RealElectronics\CPT\Manufacturers();
 new \RealElectronics\CPT\RepairServices();
+new \RealElectronics\CPT\Reviews();
 
 /*
 ===============================================
@@ -134,6 +136,20 @@ $repair_services_meta = new \RealElectronics\Theme\SimpleMetaBoxes('repair_servi
     ]
 ]);
 
+$reviews_meta = new \RealElectronics\Theme\SimpleMetaBoxes('review', 'Review Meta', [
+    'review_rating' => [
+        'label' => 'Rating',
+        'type' => 'select',
+        'options' => [
+            '5' => '5 Stars',
+            '4' => '4 Stars',
+            '3' => '3 Stars',
+            '2' => '2 Stars',
+            '1' => '1 Star',
+        ]
+    ]
+]);
+
 /*
 ===============================================
 	Register ACF Fields
@@ -150,6 +166,9 @@ new \RealElectronics\ACF\CallToActionFields();
 
 require_once get_template_directory() . '/classes/settings/class-settings-manufacturer.php';
 new \RealElectronics\Settings\ManufacturerSettings();
+
+require_once get_template_directory() . '/classes/settings/class-settings-repair-service.php';
+new \RealElectronics\Settings\RepairServiceSettings();
 
 require_once get_template_directory() . '/classes/settings/class-settings-global.php';
 new \RealElectronics\Settings\GlobalSettings();

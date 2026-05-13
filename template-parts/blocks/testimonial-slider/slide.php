@@ -1,8 +1,8 @@
 <?php
 
-    $author = $args['author'];
-    $content = $args['content'];
-    $rating = $args['rating'];
+    $author = $args['author'] ?? '';
+    $content = $args['content'] ?? '';
+    $rating = max(0, min(5, absint($args['rating'] ?? 5)));
 
 ?>
 
@@ -16,9 +16,9 @@
         <?php } ?>
     </div>
     <blockquote>
-        <p class="clamp-6"><?php echo $content; ?></p>
+        <div class="clamp-6"><?php echo wp_kses_post($content); ?></div>
         <footer>
-            <strong class="has-rajdhani-font-family">- <?php echo $author; ?></strong>
+            <strong class="has-rajdhani-font-family">- <?php echo esc_html($author); ?></strong>
         </footer>
     </blockquote>
 </div>

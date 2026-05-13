@@ -41,7 +41,7 @@ if( empty($image) || empty($heading) || empty($text) ) {
             <div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow br-sm p-md">
                 <h2 class="wp-block-heading"><?php echo esc_html( $heading ); ?></h2>
 
-                <p><?php echo esc_html( $text ); ?></p>
+                <p class="mt-0"><?php echo esc_html( $text ); ?></p>
 
                 <div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
                     <div class="wp-block-button"><a href="<?php echo home_url('/request-a-repair'); ?>" class="wp-block-button__link has-primary-background-color has-background wp-element-button">Request a Repair</a></div>

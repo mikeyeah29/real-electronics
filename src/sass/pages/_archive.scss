@@ -72,7 +72,12 @@
     margin-bottom: 1.25rem;
     img {
         aspect-ratio: 16 / 11;
-        object-fit: cover;
+        object-fit: contain;
+    }
+    &.is-cover {
+        img {
+            object-fit: cover;
+        }
     }
 }
 

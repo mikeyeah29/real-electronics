@@ -41,7 +41,7 @@ $repair_service = new \RealElectronics\Models\RepairService(get_the_ID());
 </div>
 <!-- /wp:cover -->
 
-<div class="container pt-lg pb-lg page-start-after-hero">
+<div class="container pt-lg pb-lg page-start-after-hero wysiwyg-content">
     <?php the_content(); ?>
 </div>
 

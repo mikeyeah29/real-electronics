@@ -4,4 +4,7 @@
     border-radius: 4px;
     box-shadow: inset 0px 0px 60px 0px #ffffff29;
     height: 100%;
+    footer {
+        margin-top: var(--wp--preset--spacing--sm);
+    }
 }

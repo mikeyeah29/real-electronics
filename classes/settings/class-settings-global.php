@@ -111,7 +111,7 @@ class GlobalSettings {
 			'real_electronics_global_cta',
 			'Call To Action',
 			function () {
-				echo '<p>Global CTA shown on manufacturer pages. This can be overridden on each manufacturer page.</p>';
+				echo '<p>Global CTA shown on manufacturer and repair service pages. This can be overridden on each manufacturer and repair service page.</p>';
 			},
 			'real-electronics-global'
 		);

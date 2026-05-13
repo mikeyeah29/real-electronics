@@ -186,3 +186,13 @@
         transform: translateY(0);
     }
 }
+
+.wysiwyg-content {
+    h3 {
+        margin-bottom: var(--wp--preset--spacing--sm);
+        margin-top: var(--wp--preset--spacing--md);
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
